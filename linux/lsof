@@ -1,0 +1,48 @@
+用来查看进程打开的句柄
+
+# ps
+...
+302 root     194:11 /opt/bin/sys_server
+...
+# lsof |grep 302
+302     /opt/bin/sys_server     /dev/null
+302     /opt/bin/sys_server     /dev/null
+302     /opt/bin/sys_server     /opt/log/sys_server.log
+302     /opt/bin/sys_server     /opt/log/gmi_user_v40.log
+302     /opt/bin/sys_server     socket:[862]
+302     /opt/bin/sys_server     socket:[863]
+302     /opt/bin/sys_server     anon_inode:[eventpoll]
+302     /opt/bin/sys_server     socket:[864]
+302     /opt/bin/sys_server     socket:[865]
+302     /opt/bin/sys_server     socket:[866]
+302     /opt/bin/sys_server     /dev/iav
+302     /opt/bin/sys_server     socket:[870]
+302     /opt/bin/sys_server     /dev/iav
+302     /opt/bin/sys_server     /dev/fb0
+302     /opt/bin/sys_server     /dev/led_k
+302     /opt/bin/sys_server     /dev/iav
+302     /opt/bin/sys_server     /dev/iav
+302     /opt/bin/sys_server     /proc/ambarella/vin0_idsp
+302     /opt/bin/sys_server     /sys/devices/bogus_bus.2/0.pwm_bl/backlight/0.pwm_bl/brightness
+302     /opt/bin/sys_server     /opt/config/fonts/fangzhengsongtijianti.ttf
+302     /opt/bin/sys_server     /dev/bcsr
+302     /opt/bin/sys_server     socket:[891]
+302     /opt/bin/sys_server     /dev/ttyS0
+302     /opt/bin/sys_server     /sys/devices/e8000000.apb/e801d000.adc/adcsys
+302     /opt/bin/sys_server     /opt/config/gmi_users.db
+302     /opt/bin/sys_server     /alarmchan_msg
+302     /opt/bin/sys_server     /alarmcenter_msg
+302     /opt/bin/sys_server     /alarmgb_msg
+302     /opt/bin/sys_server     /alarmcustom_msg
+302     /opt/bin/sys_server     socket:[897]
+302     /opt/bin/sys_server     /dev/bcsr
+302     /opt/bin/sys_server     /mnt/mmcblk0p1/videoRecord.db
+302     /opt/bin/sys_server     socket:[930]
+302     /opt/bin/sys_server     /alarmcenter_msg
+302     /opt/bin/sys_server     /alarmchan_msg
+302     /opt/bin/sys_server     socket:[931]
+302     /opt/bin/sys_server     socket:[933]
+302     /opt/bin/sys_server     socket:[936]
+302     /opt/bin/sys_server     socket:[940]
+302     /opt/bin/sys_server     /dev/led_k
+302     /opt/bin/sys_server     /dev/led_k
