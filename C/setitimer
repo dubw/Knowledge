@@ -1,0 +1,51 @@
+/* 今天使用该函数时候，对这个函数的入参理解不正确，这里记录分享 */
+
+首先看一下函数原型：
+NAME
+       getitimer, setitimer - get or set value of an interval timer
+
+SYNOPSIS
+       #include <sys/time.h>
+
+       int getitimer(int which, struct itimerval *curr_value);
+       int setitimer(int which, const struct itimerval *new_value,
+                     struct itimerval *old_value);
+
+入参：
+    which可以选取下面几个值：
+       ITIMER_REAL    decrements in real time, and delivers SIGALRM upon expiration. <--- 一般都是用这个
+       ITIMER_VIRTUAL decrements only when the process is executing, and delivers SIGVTALRM upon expiration.
+       ITIMER_PROF    decrements both when the process executes and when the system is executing on behalf of  the  process.   Coupled  with
+                      ITIMER_VIRTUAL,  this  timer  is  usually  used to profile the time spent by the application in user and kernel space.
+                      SIGPROF is delivered upon expiration.
+    struct itimerval结构：
+       Timer values are defined by the following structures:
+           struct itimerval {
+               struct timeval it_interval; /* next value */ <--- 这个是间隔时间，也就是说每隔多久触发一次
+               struct timeval it_value;    /* current value */  <--- 这里是第一次调用触发的延时时间，就是说执行函数后过多久才开始调用触发
+           };
+           struct timeval {
+               long tv_sec;                /* seconds */ <--- 秒
+               long tv_usec;               /* microseconds */ <--- 微妙
+           };
+
+
+举个例子：
+
+static void time_alarm_update()
+{
+    ...
+}
+static int time_alarm_init(void)
+{
+    /* 这里希望延时 5 秒开始定时函数， 每隔 40 毫秒再次调用定时函数 */
+    struct itimerval st_new = { { 0, 40000 }, { 5, 0 } };
+    struct itimerval st_old;
+    
+    /* 定时函数 */
+    signal(SIGALRM, time_alarm_update);
+    /* 设置新的定时时间，老的保存在st_old中 */
+    setitimer(ITIMER_REAL, &st_new, &st_old);
+
+    return 0;
+}
