@@ -6,7 +6,7 @@ class MyFrame(wx.Frame):
         self.frame_width = 1025.0
         self.frame_height = 760.0
         wx.Frame.__init__(self, parent, -1, u"火焰检测", size=(self.frame_width, self.frame_height))
-        icon = wx.Icon("gmi_logo.png", wx.BITMAP_TYPE_PNG)
+        icon = wx.Icon("ico.png", wx.BITMAP_TYPE_PNG)
         self.SetIcon(icon)
         self.panel = wx.Panel(self, -1)
         self.SetBackgroundColour((49,60,66))
