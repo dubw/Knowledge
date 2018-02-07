@@ -5,7 +5,7 @@ class MyFrame(wx.Frame):
     def __init__(self, parent):
         self.frame_width = 1025.0
         self.frame_height = 760.0
-        wx.Frame.__init__(self, parent, -1, u"火焰检测", size=(self.frame_width, self.frame_height))
+        wx.Frame.__init__(self, parent, -1, u"TEST", size=(self.frame_width, self.frame_height))
         icon = wx.Icon("ico.png", wx.BITMAP_TYPE_PNG)
         self.SetIcon(icon)
         self.panel = wx.Panel(self, -1)
@@ -18,7 +18,7 @@ class MyFrame(wx.Frame):
         self.url = wx.TextCtrl(self.panel, -1, "", style=wx.BORDER_NONE | wx.TE_NOHIDESEL)
         self.url.SetForegroundColour('white')
         self.url.SetBackgroundColour((79,84,90))#((135,141,150))
-        self.url.SetValue("http://hls.open.ys7.com/openlive/ada7a4e2aa134dea8a546634bc33627d.hd.m3u8")
+        self.url.SetValue("http://www.baidu.com")
         self.conn_btn = wx.Button(self.panel, label=u"连接", style=wx.BORDER_NONE)
         self.conn_btn.SetBackgroundColour('black')
         self.conn_btn.SetForegroundColour('white')
@@ -42,14 +42,14 @@ class MyFrame(wx.Frame):
         temp = xbmp.ConvertToBitmap()
         self.xmedia = wx.StaticBitmap(self.panel,-1,temp)
         self.xmedia.Bind(wx.EVT_SIZE, self.OnSize)
-        self.media_text = wx.StaticText(self.panel, -1, u"实时视频", )
+        self.media_text = wx.StaticText(self.panel, -1, u"左侧图片", )
         self.media_text.SetForegroundColour('white')
 
         ximage = wx.Image('2.jpg', wx.BITMAP_TYPE_JPEG).Scale(self.bmp_width,self.bmp_height)
         temp2 = ximage.ConvertToBitmap()
         self.bmp = wx.StaticBitmap(self.panel,-1,temp2)
         self.bmp.Bind(wx.EVT_SIZE, self.OnSize)
-        self.bmp_text = wx.StaticText(self.panel, -1, u"告警图像")
+        self.bmp_text = wx.StaticText(self.panel, -1, u"右侧图片")
         self.bmp_text.SetForegroundColour('white')
 
         vbox_media.Add(self.xmedia, 1)
@@ -66,9 +66,8 @@ class MyFrame(wx.Frame):
         hbox3 = wx.BoxSizer(wx.HORIZONTAL)
 
         self.filelist = wx.ListCtrl(self.panel, -1, style=wx.LC_REPORT | wx.BORDER_NONE)
-        self.filelist.InsertColumn(0, u"文件名", width=440)
-        self.filelist.InsertColumn(1, u"报警时间", width=260)
-        self.filelist.InsertColumn(2, u"报警类型", width=260)
+        self.filelist.InsertColumn(0, u"名称", width=440)
+        self.filelist.InsertColumn(1, u"时间", width=260)
         self.filelist.SetForegroundColour('white')
         self.filelist.SetBackgroundColour((79,84,90))
         hbox3.Add(self.filelist, 1, wx.EXPAND)
