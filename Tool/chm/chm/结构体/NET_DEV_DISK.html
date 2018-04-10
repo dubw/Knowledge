@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_DISK</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_DISK</h1>
+<p>SD卡状态信息。</p>                            
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>          dwStorageDiskNo;</i><b></b>
+<b>    OS_UINT32</b><i>          dwTotalSpaceVolume;</i><b></b>
+<b>    OS_UINT32</b><i>          dwFreeSpaceVolume;</i><b></b>
+<b>    OS_UINT8</b><i>           byDiskStatus;</i><b></b>
+<b>    OS_UINT8</b><i>           byDiskType;</i><b></b>
+<b>    OS_UINT8</b><i>           byDiskAttribute;</i><b></b>
+<b>    OS_UINT8</b><i>           byDiskFormatRate;</i><b></b>
+<b>    OS_UINT8</b><i>           byReserved[120];</i><b></b>
+<b>} NET_DEV_DISK;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwStorageDiskNo</i></dt>
+<dd>硬盘号，从1开始</dd>
+
+<dt><i>dwTotalSpaceVolume</i></dt>
+<dd>硬盘总容量，单位：MB</dd>
+
+<dt><i>dwFreeSpaceVolume</i></dt>
+<dd>硬盘剩余容量，单位：MB</dd>
+
+<dt><i>byDiskStatus</i></dt>
+<dd>硬盘状态，0-无卡 1-正常 2-异常 3-存储满 4-未格式化</dd>
+
+<dt><i>byDiskType</i></dt>
+<dd>硬盘种类，0-SD卡 1-USB 2-NAS</dd>
+
+<dt><i>byDiskAttribute</i></dt>
+<dd>硬盘读写状态，0-可读可写 1-只写 2-只读</dd>
+
+<dt><i>byDiskFormatRate</i></dt>
+<dd>格式化进度，100-已格式化 其他-未格式化</dd>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetSDCardStatus.html">NET_DEV_GetSDCardStatus</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

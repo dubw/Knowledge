@@ -1,0 +1,218 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_DISK_FILE_IN</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_DISK_FILE_IN</h1>
+<p>查询录像文件的条件。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>        byRecQueryType;</i><b></b>
+<b>    OS_UINT8</b><i>        byReserved[3];</i><b></b>
+<b>    OS_UINT32</b><i>       dwRecTrigMode;</i><b></b>
+<b>    <a href="NET_DEV_TIME.html">NET_DEV_TIME</a></b><i>    struStartTime;</i><b></b>
+<b>    <a href="NET_DEV_TIME.html">NET_DEV_TIME</a></b><i>    struStopTime;</i><b></b>
+<b>    OS_UINT16</b><i>       wOffset;</i><b></b>
+<b>    OS_UINT16</b><i>       wMaxNum;</i><b></b>
+<b>    OS_UINT8</b><i>        byReserved1[68];</i><b></b>
+<b>} NET_DEV_DISK_FILE_IN;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byRecQueryType</i></dt>
+<dd>查询类型，详细见下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>宏定义</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_QUERY_TYPE_TIME</b></td>
+<td>0</td>
+<td>根据时间查询，此时dwRecTrigMode无效，查询所有类型的录像文件</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_QUERY_TYPE_TRIGGER</b></td>
+<td>0</td>
+<td>根据录像类型查询，详细见dwRecTrigMode</td>
+</tr>
+</table>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+<dt><i>dwRecTrigMode</i></dt>
+<dd>触发类型，详细见下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>宏定义</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_TIME</b></td>
+<td>0x00000001</td>
+<td>常规录像（时间）</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_MANUAL</b></td>
+<td>0x00000002</td>
+<td>手动录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_MOTION</b></td>
+<td>0x00000004</td>
+<td>移动侦测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_ALARM</b></td>
+<td>0x00000008</td>
+<td>告警录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_VIDEOLOSE</b></td>
+<td>0x00000010</td>
+<td>视频丢失录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_NETOFF</b></td>
+<td>0x00000020</td>
+<td>断网检测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_AUDIOD</b></td>
+<td>0x00000040</td>
+<td>音频检测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_LINEDETECT</b></td>
+<td>0x00000080</td>
+<td>越界侦测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_FIELDDETECT</b></td>
+<td>0x00000100</td>
+<td>区域入侵录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_REGIONENTRANCE</b></td>
+<td>0x00000200</td>
+<td>区域入侵录像-进入</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_REGIONEXITING</b></td>
+<td>0x00000400</td>
+<td>区域入侵录像-离开</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_OBJECTLEFT</b></td>
+<td>0x00000800</td>
+<td>物品遗留录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_OBJECTFETCH</b></td>
+<td>0x00001000</td>
+<td>物品移除录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_SCENECHANGE</b></td>
+<td>0x00002000</td>
+<td>场景变换录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_DEFOCUSDETECT</b></td>
+<td>0x00004000</td>
+<td>虚焦检测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_FACEDETECT</b></td>
+<td>0x00008000</td>
+<td>人脸检测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_LOITERINGDETECT</b></td>
+<td>0x00010000</td>
+<td>徘徊检测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_GROUPDETECT</b></td>
+<td>0x00020000</td>
+<td>聚集检测录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_RAPIDMOVING</b></td>
+<td>0x00040000</td>
+<td>快速移动录像</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_RECORD_FILE_TYPE_REC_PARKINGDETECT</b></td>
+<td>0x00080000</td>
+<td>停车检测录像</td>
+</tr>
+</table>
+
+<dt><i>struStartTime</i></dt>
+<dd>录像起始时间</dd>
+
+<dt><i>struStopTime</i></dt>
+<dd>录像结束时间</dd>
+
+<dt><i>wOffset</i></dt>
+<dd>偏移量，指从第几个开始查询，文件按照录像起始时间顺序排列</dd>
+
+<dt><i>wMaxNum</i></dt>
+<dd>本次想要获取的文件个数，取值范围：[1,25]</dd>
+
+<dt><i>byReserved1</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

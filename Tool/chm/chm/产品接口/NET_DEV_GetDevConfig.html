@@ -1,0 +1,163 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_GetDevConfig</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_GetDevConfig</h1>
+<p>获取设备配置信息。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_GetDevConfig(</b>
+<b>    OS_INT32</b><i>        lUserID,</i><b></b>
+<b>    OS_UINT32</b><i>       dwCommand,</i><b></b>
+<b>    OS_INT32</b><i>        lINdex,</i><b></b>
+<b>    OS_VOIDPTR</b><i>      lpOutBuffer,</i><b></b>
+<b>    OS_UINT32</b><i>       dwOutBufferSize,</i><b></b>
+<b>    OS_UINT32</b><i>       dwTimeOut = 0</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lUserID</i></dt>
+<dd>[in] 用户ID，NET_DEV_Login的返回值</dd>
+
+<dt><i>dwCommand</i></dt>
+<dd>[in] 获取设备配置信息的命令参数，具体参数见下表</dd>
+
+<dt><i>lINdex</i></dt>
+<dd>[in] 序列号</dd>
+
+<dt><i>lpOutBuffer</i></dt>
+<dd>[out] 获取到的设备参数信息</dd>
+
+<dt><i>dwOutBufferSize</i></dt>
+<dd>[out] 获取到的设备参数结构体大小</dd>
+
+<dt><i>dwTimeOut</i></dt>
+<dd>[in] 接收超时时间，单位：毫秒。默认值为0</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../接口定义/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+<h4>Remarks</h4>
+<p>对于不同的命令参数（dwCommand），lpOutBuffer和lINdex对应不同的含义，具体如下表所示：</p>
+<table>
+<tr valign=top>
+<th align=left><b>dwCommand</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+<th align=left>lpOutBuff对应结构体</th>
+<th align=left>lINdex</th>
+<th align=left>适用产品</th>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_VEHICLE_DETECT</b></td>
+<td>0x0051</td>
+<td>输电线路防外破-重型车辆检测配置</td>
+<td><b><a href="../结构体/NET_DEV_VEHICLE_DETECT.html">NET_DEV_VEHICLE_DETECT</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_FLOAT_DETECT</b></td>
+<td>0x0053</td>
+<td>输电线路防外破-漂浮物检测配置</td>
+<td><b><a href="../结构体/NET_DEV_FLOAT_DETECT.html">NET_DEV_FLOAT_DETECT</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_VEHICLE_SERVER</b></td>
+<td>0x0055</td>
+<td>输电线路防外破-电力demo服务器配置</td>
+<td><b><a href="../结构体/NET_DEV_VEHICLE_SERVER.html">NET_DEV_VEHICLE_SERVER</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_LIFTARM</b></td>
+<td>0x0061</td>
+<td>输电线路防外破-扬臂检测配置</td>
+<td><b><a href="../结构体/NET_DEV_LIFTARM_DETECT.html">NET_DEV_LIFTARM_DETECT</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_CAMERALINKAGE_CFG</b></td>
+<td>0x0076</td>
+<td>枪机球机联动配置</td>
+<td><b><a href="../结构体/NET_DEV_CAMERA_LINKAGE_CFG.html">NET_DEV_CAMERA_LINKAGE_CFG</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_ELECTRIC_POWER_ALARM_CFG</b></td>
+<td>0x0078</td>
+<td>输电线路防外破-电源告警配置</td>
+<td><b><a href="../结构体/NET_DEV_ELECTRIC_POWER_ALARM_CONFIG.html">NET_DEV_ELECTRIC_POWER_ALARM_CONFIG</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_ELECTRIC_POWER_BATTERY_BASE_INFO</b></td>
+<td>0x007a</td>
+<td>输电线路防外破-电源基本配置</td>
+<td><b><a href="../结构体/NET_DEV_ELECTRIC_POWER_BATTERY_BASE_INFO.html">NET_DEV_ELECTRIC_POWER_BATTERY_BASE_INFO</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_ELECTRIC_POWER_BATTERY_DEFAULT_CFG</b></td>
+<td>0x007c</td>
+<td>输电线路防外破-电源默认配置</td>
+<td><b><a href="../结构体/NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG.html">NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_GET_ELECTRIC_POWER_BATTERY_CFG</b></td>
+<td>0x007e</td>
+<td>输电线路防外破-电源配置</td>
+<td><b><a href="../结构体/NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG.html">NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+</table>
+
+<h4>See Also</h4>
+<p><b><a href="NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b></p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

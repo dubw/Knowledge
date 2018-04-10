@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_IP_CHAN_INFO</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_IP_CHAN_INFO</h1>
+<p>视频源通道信息。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT16</b><i>                  wChanID;</i><b></b>
+<b>    OS_UINT8</b><i>                   byEnable;</i><b></b>
+<b>    OS_UINT8</b><i>                   byProType;</i><b></b>
+<b>    char</b><i>                       sUserName[NET_NAME_LEN];</i><b></b>
+<b>    char</b><i>                       sPassword[NET_NAME_LEN];</i><b></b>
+<b>    union {</b><i></i><b></b>
+<b>        <a href="NET_DEV_ONVIF_SOURCE.html">NET_DEV_ONVIF_SOURCE</a></b><i>   struOnvifSource;</i><b></b>
+<b>        <a href="NET_DEV_RTSP_SOURCE.html">NET_DEV_RTSP_SOURCE</a></b><i>    struRtspSource;</i><b></b>
+<b>        <a href="NET_DEV_GB_SOURCE.html">NET_DEV_GB_SOURCE</a></b><i>      struGbSource;</i><b></b>
+<b>        OS_UINT8</b><i>               byRes[600];</i><b></b>
+<b>    } uSource;</b><i></i><b></b>
+<b>} NET_DEV_IP_CHAN_INFO;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>wChanID</i></dt>
+<dd>通道号，从1开始</dd>
+
+<dt><i>byEnable</i></dt>
+<dd>通道是否有效，0-有效 1-无效</dd>
+
+<dt><i>byProType</i></dt>
+<dd>接入协议类型，1:ONVIF 2:RTSP 3:GB28181</dd>
+
+<dt><i>sUserName</i></dt>
+<dd>ipc设备用户名</dd>
+
+<dt><i>sPassword</i></dt>
+<dd>ipc设备密码</dd>
+
+<dt><i>struOnvifSource</i></dt>
+<dd>ONVIF源配置参数</dd>
+
+<dt><i>struRtspSource</i></dt>
+<dd>RTSP源配置参数</dd>
+
+<dt><i>struGbSource</i></dt>
+<dd>GB28181源配置参数</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置位0</dd>
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ALARM_HANDLE</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ALARM_HANDLE</h1>
+<p>设备告警关联信息。</p>                                 
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>               dwLinkAlarmStrategy;</i><b></b>
+<b>    <a href="NET_DEV_ALARM_LINK_INFO.html">NET_DEV_ALARM_LINK_INFO</a></b><i> struLinkInfo;</i><b></b>
+<b>    OS_UINT8</b><i>                byRes[200];</i><b></b>
+<b>} NET_DEV_ALARM_HANDLE;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwLinkAlarmStrategy</i></dt>
+<dd>联动方式，具体参考LINK_STRATEGY，如下</dd>
+<table>
+<tr valign=top>
+<th align=left><b>联动方式</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>STRATEGY_ALARMOUT</b></td>
+<td>0x1</td>
+<td>触发报警输出</td>
+</tr>
+<tr valign=top>
+<td><b>STRATEGY_ALARMCENTER</b></td>
+<td>0x2</td>
+<td>上报报警中心</td>
+</tr>
+<tr valign=top>
+<td><b>STRATEGY_AUDIO</b></td>
+<td>0x4</td>
+<td>触发音频输出</td>
+</tr>
+<td><b>STRATEGY_EMAIL</b></td>
+<td>0x8</td>
+<td>触发发送邮件</td>
+</tr>
+<td><b>STRATEGY_FTP</b></td>
+<td>0x10</td>
+<td>触发上传FTP服务器</td>
+</tr>
+<td><b>STRATEGY_RECORD</b></td>
+<td>0x20</td>
+<td>触发视频录像</td>
+</tr>
+<td><b>STRATEGY_PTZ</b></td>
+<td>0x40</td>
+<td>触发云台控制</td>
+</tr>
+<td><b>STRATEGY_CAPTURE</b></td>
+<td>0x80</td>
+<td>触发抓图</td>
+</tr>
+</table>
+
+<dt><i>struLinkInfo</i></dt>
+<dd>关联方式配置</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

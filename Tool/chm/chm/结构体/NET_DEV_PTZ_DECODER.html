@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_PTZ_DECODER</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_PTZ_DECODER</h1>
+<p>串口设置信息结构。</p>                            
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_INT32</b><i>               iBaudRate;</i><b></b>
+<b>    OS_UINT8</b><i>               byDataBit;</i><b></b>
+<b>    OS_UINT8</b><i>               byStopBit;</i><b></b>
+<b>    OS_UINT8</b><i>               byParity;</i><b></b>
+<b>    OS_UINT8</b><i>               byFlowcontrol;</i><b></b>
+<b>    OS_INT32</b><i>               iDecoderType;</i><b></b>
+<b>    OS_INT32</b><i>               iDecoderAddress;</i><b></b>b>
+<b>    OS_UINT8</b><i>               sRerserved[400];</i><b></b>
+<b>} NET_DEV_PTZ_DECODER;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>iBaudRate</i></dt>
+<dd>波特率，取值范围为{300,1200,2400,4800,9600,19200,38400,115200}中的一个</dd>
+
+<dt><i>byDataBit</i></dt>
+<dd>数据位，取值范围{7,8}中的一个</dd>
+
+<dt><i>byStopBit</i></dt>
+<dd>停止位，取值范围{1,2}中的一个</dd>
+
+<dt><i>byParity</i></dt>
+<dd>校验位，0-没有校验 1-奇校验 2-偶校验</dd>
+
+<dt><i>byFlowcontrol</i></dt>
+<dd>流控制，0-没有流控 1-硬件流控 2-软件流控</dd>
+
+<dt><i>iDecoderType</i></dt>
+<dd>协议类型，1-PELCO-D协议 2-PELCO-P协议 4-楼宇协议 5-温湿度传感器</dd>
+
+<dt><i>iDecoderAddress</i></dt>
+<dd>地址，取值范围1~255</dd>
+
+<dt><i>sRerserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

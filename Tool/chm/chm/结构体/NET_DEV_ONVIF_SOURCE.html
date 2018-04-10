@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ONVIF_SOURCE</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ONVIF_SOURCE</h1>
+<p>ONVIF源配置信息。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    <a href="NET_DEV_IP_ADDR.html">NET_DEV_IP_ADDR</a></b><i>        strIpAddr;</i><b></b>
+<b>    OS_UINT16</b><i>              wPort;</i><b></b>
+<b>    OS_UINT8</b><i>   			 byProType;</i><b></b>
+<b>    OS_UINT8</b><i>   			 bySubTransPortocol;</i><b></b>
+<b>} NET_DEV_ONVIF_SOURCE;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>strIpAddr</i></dt>
+<dd>IP地址</dd>
+
+<dt><i>wPort</i></dt>
+<dd>源设备ONVIF服务器端口号</dd>
+
+<dt><i>byMainTransPortocol</i></dt>
+<dd>主码流传输协议，0-TCP 1-UDP</dd>
+
+<dt><i>bySubTransPortocol</i></dt>
+<dd>子码流传输协议，0-TCP 1-UDP</dd>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

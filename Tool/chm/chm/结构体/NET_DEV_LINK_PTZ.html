@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_LINK_PTZ</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_LINK_PTZ</h1>
+<p>设备PTZ联动方式配置。</p>                                                   
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>               byOperateCmd;</i><b></b>
+<b>    OS_UINT8</b><i>               byRes1[3];</i><b></b>
+<b>    OS_UINT16</b><i>              wOperateSeqNum;</i><b></b>
+<b>    OS_UINT16</b><i>              wPTZDelayTime;</i><b></b>
+<b>    OS_UINT8</b><i>               byRes[20];</i><b></b>
+<b>} NET_DEV_LINK_PTZ;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byOperateCmd</i></dt>
+<dd>关联PTZ操作，0-没有 1-预置点 2-巡航 3-模式路径</dd>
+
+<dt><i>byRes1</i></dt>
+<dd>保留位，置为0</dd>
+
+<dt><i>wOperateSeqNum</i></dt>
+<dd>预置点、巡航、模式路径等操作序号</dd>
+
+<dt><i>wPTZDelayTime</i></dt>
+<dd>PTZ移动持续时间，单位：秒</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

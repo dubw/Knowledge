@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_PTZ_3DCTRL</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_PTZ_3DCTRL</h1>
+<p>设备云台3D配置参数。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_INT32</b><i>            iTopX;</i><b></b>
+<b>    OS_INT32</b><i>            iTopY;</i><b></b>
+<b>    OS_INT32</b><i>            iWidth;</i><b></b>
+<b>    OS_INT32</b><i>            iHeight;</i><b></b>
+<b>    OS_UINT8</b><i>            byRes[64];</i><b></b>
+<b>} NET_DEV_PTZ_3DCTRL;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>iTopX</i></dt>
+<dd>3D控制选择的矩形区域的起始点的x坐标，iTopX = (x0 / W) * 8192，这里x0为起始点(x0，y0)的横坐标，需要先将其转换为相对视频大小的相对坐标，W为视频宽度</dd>
+
+<dt><i>iTopY</i></dt>
+<dd>3D控制选择的矩形区域的起始点的y坐标，iTopY =(y0 / H) * 8192，y0同上，H为视频高度</dd>
+
+<dt><i>iWidth</i></dt>
+<dd>3D控制选择的矩形区域的宽，iWidth = (w / W) * 8192，w为矩形宽度</dd>
+
+<dt><i>iHeight</i></dt>
+<dd>3D控制选择的矩形区域的高，iHeight = (h / H) * 8192，h为矩形高度果</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>Remarks</h4>
+<p>
+iTopX,iTopY,iWidth,iHeight四个参数得出一个矩形，如果iWidth> 0 和iHeight > 0，3D控制达到放大效果，如果iWidth< 0 和iHeight < 0，3D控制达到缩小效果
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+

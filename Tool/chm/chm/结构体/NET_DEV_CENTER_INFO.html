@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_CENTER_INFO</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_CENTER_INFO</h1>
+<p>设备报警中心配置。</p>    
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>               dwCenterEnable;</i><b></b>
+<b>    OS_UINT16</b><i>               wCenterPort;</i><b></b>
+<b>    <a href="NET_DEV_IP_ADDR.html">NET_DEV_IP_ADDR</a></b><i>         strIpAddr;</i><b></b>
+<b>    OS_UINT8</b><i>                sReserved[100];</i><b></b>
+<b>} NET_DEV_CENTER_INFO;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwCenterEnable</i></dt>
+<dd>报警中心是否使能，0-不使能 1-使能</dd>
+
+<dt><i>wCenterPort</i></dt>
+<dd>报警中心服务器端口号</dd>
+
+<dt><i>strIpAddr</i></dt>
+<dd>报警中心服务器IP地址</dd>
+
+<dt><i>sReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

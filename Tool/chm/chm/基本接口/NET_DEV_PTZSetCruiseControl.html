@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_PTZSetCruiseControl</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_PTZSetCruiseControl</h1>
+<p>设置巡航开启/关闭。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_PTZSetCruiseControl(</b>
+<b>    OS_INT32</b><i>             lUserID,</i><b></b>
+<b>    OS_INT32</b><i>             nChannel,</i><b></b>
+<b>    OS_INT32</b><i>             nCruiseID,</i><b></b>
+<b>    OS_INT32</b><i>             nCtrl</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lUserID</i></dt>
+<dd>[in] 用户ID，NET_DEV_Login等登录接口的返回值</dd>
+
+<dt><i>nChannel</i></dt>
+<dd>[in] 设备的通道号，从1开始</dd>
+
+<dt><i>nCruiseID</i></dt>
+<dd>[in] 巡航路径的索引号，当nCtrl为1时候有意义，当nCtrl为0时候无意义</dd>
+
+<dt><i>nCtrl</i></dt>
+<dd>[in] 是否开始巡航，0-停止 1-开始</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html"> NET_DEV_GetLastError </a></b>获取错误码，通过错误码判断出错原因。</p>
+
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+

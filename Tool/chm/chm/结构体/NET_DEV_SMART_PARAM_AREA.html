@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SMART_PARAM_AREA</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SMART_PARAM_AREA</h1>
+<p>设备区域配置参数。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    char</b><i>                           sSmartName[32];</i><b></b>
+<b>    <a href="NET_DEV_SMART_NAME_POINT.html">NET_DEV_SMART_NAME_POINT</a></b><i>       stSmartNamePoint;</i><b></b>
+<b>    OS_UINT8</b><i>                       bySmartAreaVisible;</i><b></b>
+<b>    OS_UINT8</b><i>                       bySmartDirection;</i><b></b>
+<b>    <a href="NET_DEV_SMART_AREA_POINT.html">NET_DEV_SMART_AREA_POINT</a></b><i>       stSmartAreaPoint[MAX_SMART_AREA_POINT];</i><b></b>
+<b>    OS_UINT16</b><i>                      wSmartSensitivity;</i><b></b>
+<b>    OS_UINT16</b><i>                      wSmartTime;</i><b></b>
+<b>    OS_UINT16</b><i>                      wSmartSizeRate;</i><b></b>
+<b>    OS_UINT32</b><i>                      byReserved[20];</i><b></b>
+<b>} NET_DEV_SMART_PARAM_AREA;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>sSmartName</i></dt>
+<dd>名称</dd>
+
+<dt><i>stSmartNamePoint</i></dt>
+<dd>名称坐标位置</dd>
+
+<dt><i>bySmartAreaVisible</i></dt>
+<dd>区域是否可视</dd>
+
+<dt><i>bySmartDirection</i></dt>
+<dd>方向</dd>
+
+<dt><i>stSmartAreaPoint</i></dt>
+<dd>区域坐标</dd>
+
+<dt><i>wSmartSensitivity</i></dt>
+<dd>灵敏度</dd>
+
+<dt><i>wSmartTime</i></dt>
+<dd>时间阈值</dd>
+
+<dt><i>wSmartSizeRate</i></dt>
+<dd>尺寸比例</dd>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

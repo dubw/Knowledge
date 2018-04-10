@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_StartListen</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_StartListen</h1>
+<p>建立报警通道。</p>
+
+<PRE class=syntax><b>OS_INT32 NET_DEV_StartListen(</b>
+<b>    char</b><i>                 * sLocalIP,</i><b></b>
+<b>    OS_UINT16</b><i>              wLocalPort,</i><b></b>
+<b>    ALARM_INFO_CBF</b><i>         fDataCallback,</i><b></b>
+<b>    OS_VOIDPTR</b><i>             pUserData</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>sLocalIP</i></dt>
+<dd>[in] 本机IP地址，可以置为NULL。如果为NULL，则自动选择本地IP地址</dd>
+
+<dt><i>wLocalPort</i></dt>
+<dd>[in] 报警中心端口号</dd>
+
+<dt><i>fDataCallback</i></dt>
+<dd>[in] 报警信息回调函数</dd>
+
+<dt><i>pUser</i></dt>
+<dd>[in] 回调函数参数</dd>
+</dl>
+
+<h4>Callback Function</h4>
+<PRE class=syntax><b>typedef void (SDKCALL *ALARM_INFO_CBF)(</b>
+<b>    OS_INT32</b><i>                lAlarmType,</i><b></b>
+<b>    <a href="../结构体/NET_DEV_ALARMER.html">NET_DEV_ALARMER</a></b><i>       * pAlarmer,</i><b></b>
+<b>    char</b><i>                  * pAlarmInfo,</i><b></b>
+<b>    OS_UINT32</b><i>               dwBufLen,</i><b></b>
+<b>    OS_VOIDPTR</b><i>              pUser</i><b></b>
+<b>);</b></PRE>
+
+<h4>Callback Function Parameters</h4>
+<dl>
+<dt><i>lAlarmType</i></dt>
+<dd>[out] 上传的报警消息类型，如下表</dd>
+
+<table>
+<tr valign=top>
+<th align=left><b>宏定义</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>UPLOAD_IPC_ALARM</b></td>
+<td>0x2000</td>
+<td>IPC报警类型，pAlarmInfo对应结构体：NET_DEV_IPC_ALARM</td>
+</tr>
+
+<tr valign=top>
+<td><b>UPLOAD_PLATE</b></td>
+<td>0x2001</td>
+<td>上传车牌信息，pAlarmInfo对应结构体：NET_DEV_PLATE_CAPTURE（定制接口）</td>
+</tr>
+
+<tr valign=top>
+<td><b>UPLOAD_ELECTRICAL_LINE</b></td>
+<td>0x2002</td>
+<td>上传车牌信息，pAlarmInfo对应结构体：NET_DEV_PLATE_CAPTURE（定制接口）</td>
+</tr>
+</table>
+
+<dt><i>pAlarmer</i></dt>
+<dd>[out] 报警设备IP等信息</dd>
+
+<dt><i>pAlarmInfo</i></dt>
+<dd>[out] 报警内容</dd>
+
+<dt><i>dwBufLen</i></dt>
+<dd>[out] 报警内容长度</dd>
+
+<dt><i>pUser</i></dt>
+<dd>[out] 用户指针</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>-1表示失败，其他值作为NET_DEV_StopListen接口的输入句柄。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+
+<h4>See Also</h4>
+<p>
+<b><a href="NET_DEV_StopListen.html">NET_DEV_StopListen</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+

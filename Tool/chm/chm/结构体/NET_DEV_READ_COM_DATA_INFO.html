@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_READ_COM_DATA_INFO</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_READ_COM_DATA_INFO</h1>
+<p>读取串口结构体。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>          dwChannel;</i><b></b>
+<b>    OS_UINT32</b><i>          dwDataSize;</i><b></b>
+<b>    OS_INT32</b><i>           iReserved[8];</i><b></b>
+<b>} NET_DEV_READ_COM_DATA_INFO;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>nChannel</i></dt>
+<dd>通道号，保留位，置为0</dd>
+
+<dt><i>dwDataSize</i></dt>
+<dd>期望读取数据字节数量</dd>
+
+<dt><i>iReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+

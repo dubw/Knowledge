@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_StartVoiceCom_MR</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_StartVoiceCom_MR</h1>
+<p>启动语音转发，获取编码后的音频数据。</p>
+
+<PRE class=syntax><b>OS_INT32 NET_DEV_StartVoiceCom_MR(</b>
+<b>    OS_INT32</b><i>          lUserID,</i><b></b>
+<b>    OS_UINT32</b><i>         dwVoiceChan,</i><b></b>
+<b>    VOICE_DATA_CBF</b><i>    fVoiceDataCallBack,</i><b></b>
+<b>    OS_VOIDPTR</b><i>        pUser</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lUserID</i></dt>
+<dd>[in] 用户ID，NET_DEV_Login等登录接口的返回值</dd>
+
+<dt><i>dwVoiceChan</i></dt>
+<dd>[in] 语音通道号</dd>
+
+<dt><i>fVoiceDataCallBack</i></dt>
+<dd>[in] 音频信息回调函数</dd>
+
+<dt><i>pUser</i></dt>
+<dd>[in] 回调函数参数</dd>
+</dl>
+
+<h4>Callback Function</h4>
+<PRE class=syntax><b>typedef void (SDKCALL *VOICE_DATA_CBF)(</b>
+<b>    OS_INT32</b><i>                lVoiceComHandle,</i><b></b>
+<b>    char</b><i>                  * pRecvDataBuffer,</i><b></b>
+<b>    OS_UINT32</b><i>               dwBufSize,</i><b></b>
+<b>    OS_UINT8</b><i>                byAudioFlag,</i><b></b>
+<b>    OS_VOIDPTR</b><i>              pUser</i><b></b>
+<b>);</b></PRE>
+
+<h4>Callback Function Parameters</h4>
+<dl>
+<dt><i>lVoiceComHandle</i></dt>
+<dd>[out] NET_DEV_StartVoiceCom</dd>
+
+<dt><i>pRecvDataBuffer</i></dt>
+<dd>[out] 存放音频数据的缓冲区指针</dd>
+
+<dt><i>dwBufSize</i></dt>
+<dd>[out] 音频数据大小</dd>
+
+<dt><i>byAudioFlag</i></dt>
+<dd>[out] 音频数据类型，0-本地采集的数据 1-设备发送过来的语音数据</dd>
+
+<dt><i>pUser</i></dt>
+<dd>[out] 用户指针</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+

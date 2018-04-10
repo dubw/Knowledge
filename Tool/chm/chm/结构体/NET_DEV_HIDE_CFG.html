@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_HIDE_CFG</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_HIDE_CFG</h1>
+<p>设备隐私遮挡配置。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>               dwValidAreaNum;</i><b></b>
+<b>    <a href="NET_DEV_HIDE_AREA.html">NET_DEV_HIDE_AREA</a></b><i>        struHideAreas[NET_MAX_HIDE_AREA];</i><b></b>
+<b>    OS_UINT8</b><i>                byRes[200];</i><b></b>
+<b>} NET_DEV_HIDE_CFG;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwValidAreaNum</i></dt>
+<dd>有效的遮挡区域数量，只读</dd>
+
+<dt><i>struHideAreas</i></dt>
+<dd>遮挡区域配置</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

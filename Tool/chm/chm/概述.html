@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>前言</title>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<br/><br/><p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:26.0pt;font-family:黑体'>前言<span lang=EN-US><o:p></o:p></span></span></p>
+
+
+<p>设备网络SDK是基于设备私有网络通信协议开发的，为NVR、网络摄像机、网络球机、解码器等产品服务的配套模块，用于远程访问和控制设备软件的二次开发。</p>
+
+<p>设备网络SDK包含网络通讯库，软解码库，RTSP传输库等功能组件。</p>
+
+<table>
+<tr valign=top>
+<th align=left>类型</th>
+<th align=left>名称</th>
+<th align=left>描述</th>
+</tr>
+
+<tr valign=top>
+<td>头文件</td>
+<td>net_sdk.h</td>
+<td>包含所有接口的声明,二次开发时只需包含此头文件</td>
+
+<tr valign=top>
+<td>头文件</td>
+<td>net_sdk_define.h</td>
+<td>包含所有宏和结构体定义,此文件被net_sdk.h包含</td>
+
+<tr valign=top>
+<td>头文件</td>
+<td>net_sdk_error.h</td>
+<td>定义了全局错误类型和异常类型, 此文件被net_sdk.h包含</td>
+
+
+<tr valign=top>
+<td>动态链接库接口导出文件</td>
+<td>UnifiedNetSDK.lib</td>
+<td>Lib库文件,二次开发时通过此文件所有API</td>
+
+<tr valign=top>
+<td>动态链接库</td>
+<td>UnifiedNetSDK.dll</td>
+<td>实现SDK API的dll</td>
+
+<tr valign=top>
+<td>动态链接库</td>
+<td>rtsp_syncclient.dll</td>
+<td>SDK依赖库, 需放在SDK目录下</td>
+
+<tr valign=top>
+<td>动态链接库</td>
+<td>IPCPlayer.dll</td>
+<td>SDK依赖库, 需放在SDK目录下</td>
+
+<tr valign=top>
+<td>动态链接库</td>
+<td>IPCQuartz.dll</td>
+<td>SDK依赖库, 需放在SDK目录下</td>
+</table>
+
+<p>手册中的内容可能存在错误，或者遇到的问题，手册不能解决，请联系我司相关人员。</p>
+</body>
+
+</html>
+
+

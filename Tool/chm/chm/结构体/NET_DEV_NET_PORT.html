@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_NET_PORT</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_NET_PORT</h1>
+<p>设备系统时间信息。</p>                            
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT16</b><i>               wHttpServerPort;</i><b></b>
+<b>    OS_UINT16</b><i>               wRtspServerPort;</i><b></b>
+<b>    OS_UINT16</b><i>               wSdkServerPort;</i><b></b>
+<b>    OS_UINT16</b><i>               wUpgradePort;</i><b></b>
+<b>    OS_UINT16</b><i>               wOnvifPort;</i><b></b>
+<b>    OS_UINT16</b><i>               wSnmpPort;</i><b></b>
+<b>    OS_UINT16</b><i>               wCurrentRtspPort;</i><b></b>
+<b>    OS_UINT8</b><i>                byRes[198];</i><b></b>
+<b>} NET_DEV_NET_PORT;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>wHttpServerPort</i></dt>
+<dd>设备HTTP服务器端口</dd>
+
+<dt><i>wRtspServerPort</i></dt>
+<dd>设备RTSP服务器端口</dd>
+
+<dt><i>wSdkServerPort</i></dt>
+<dd>设备SDK服务器端口</dd>
+
+<dt><i>wUpgradePort</i></dt>
+<dd>设备升级服务器端口</dd>
+
+<dt><i>wOnvifPort</i></dt>
+<dd>设备ONVIF服务器端口</dd>
+
+<dt><i>wSnmpPort</i></dt>
+<dd>设备SNMP服务器端口</dd>
+
+<dt><i>wCurrentRtspPort</i></dt>
+<dd>RTSP流走UDP协议时候使用的端口号</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

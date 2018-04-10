@@ -1,0 +1,149 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ENCODE_INFO</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ENCODE_INFO</h1>
+<p>码流编码信息。</p>                                                           
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_INT32</b><i>              iStreamID;</i><b></b>
+<b>    OS_INT32</b><i>              iStreamType;</i><b></b>
+<b>    OS_INT32</b><i>              iCompression;</i><b></b>
+<b>    OS_INT32</b><i>              iPicWidth;</i><b></b>
+<b>    OS_INT32</b><i>              iPicHeight;</i><b></b>
+<b>    OS_INT32</b><i>              iBitrateCtrl;</i><b></b>
+<b>    OS_INT32</b><i>              iQuality;</i><b></b>
+<b>    OS_INT32</b><i>              iFramePerSecond;</i><b></b>
+<b>    OS_INT32</b><i>              iBitRateAverage;</i><b></b>
+<b>    OS_INT32</b><i>              iBitRateUp;</i><b></b>
+<b>    OS_INT32</b><i>              iBitRateDown;</i><b></b>
+<b>    OS_INT32</b><i>              iGop;</i><b></b>
+<b>    OS_INT32</b><i>              iRotate;</i><b></b>
+<b>    OS_UINT8</b><i>              byRes[100];</i><b></b>
+<b>} NET_DEV_ENCODE_INFO;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>iStreamID</i></dt>
+<dd>码流号，1-主码流 2-辅码流1 3-辅码流2 4-辅码流3</dd>
+
+<dt><i>iStreamType</i></dt>
+<dd>视频流类型，1-视频流 2-复合流</dd>
+
+<dt><i>iCompression</i></dt>
+<dd>编码格式，具体见下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>编码格式枚举定义</b></th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>COMPRESS_H264</b></td>
+<td>H.264</td>
+</tr>
+
+<tr valign=top>
+<td><b>COMPRESS_MPEG4</b></td>
+<td>MPEG4</td>
+</tr>
+
+<tr valign=top>
+<td><b>COMPRESS_MJPEG</b></td>
+<td>MJPEG</td>
+</tr>
+</table>
+
+<dt><i>iPicWidth</i></dt>
+<dd>视频编码宽度</dd>
+
+<dt><i>iPicHeight</i></dt>
+<dd>视频编码高度</dd>
+
+<dt><i>iBitrateCtrl</i></dt>
+<dd>码率控制类型，具体见下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>枚举</b></th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>BRC_CBR</b></td>
+<td>固定码率CBR</td>
+</tr>
+
+<tr valign=top>
+<td><b>BRC_VBR</b></td>
+<td>变码率VBR</td>
+</tr>
+
+<tr valign=top>
+<td><b>BRC_CVBR</b></td>
+<td>变码率和固定码率的联合CVBR</td>
+</tr>
+
+<tr valign=top>
+<td><b>BRC_CVBR1</b></td>
+<td>固定码率1CVBR1</td>
+</tr>
+
+<tr valign=top>
+<td><b>BRC_NR</b></td>
+<td>NR</td>
+</tr>
+</table>
+
+<dt><i>iQuality</i></dt>
+<dd>视频流质量，取值范围：[1,6]，1-最差 6-最好</dd>
+
+<dt><i>iFramePerSecond</i></dt>
+<dd>每秒的帧率，取值范围：[1,60]</dd>
+
+<dt><i>iBitRateAverage</i></dt>
+<dd>平均码率，取值范围：[最小码率, 最大码率]，单位:kbps</dd>
+
+<dt><i>iBitRateUp</i></dt>
+<dd>最大码率</dd>
+
+<dt><i>iBitRateDown</i></dt>
+<dd>最小码率</dd>
+
+<dt><i>iGop</i></dt>
+<dd>两个I帧之间P帧的数量，取值范围：[1,149]</dd>
+
+<dt><i>iRotate</i></dt>
+<dd>旋转使能，0-正常 1-水平镜像 2-垂直镜像 3-顺时针旋转90度 4-旋转180度 5-顺时针旋转270度</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+</body>
+
+</html>
+
+
+
+
+

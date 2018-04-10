@@ -1,0 +1,128 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_PTZSetCruise</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_PTZSetCruise</h1>
+<p>设置巡航路径。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_PTZSetCruise(</b>
+<b>    OS_INT32</b><i>                     lUserID,</i><b></b>
+<b>    OS_INT32</b><i>                     nChannel,</i><b></b>
+<b>    OS_INT32</b><i>                     nSetCruiseCmd,</i><b></b>
+<b>    OS_INT32</b><i>                     nCruiseID,</i><b></b>
+<b>    OS_VOID</b><i>                    * pConfig</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lUserID</i></dt>
+<dd>[in] 用户ID，NET_DEV_Login等登录接口的返回值</dd>
+
+<dt><i>nChannel</i></dt>
+<dd>[in] 设备的通道号，从1开始</dd>
+
+<dt><i>nSetCruiseCmd</i></dt>
+<dd>[in] 设置巡航操作的命令参数，包括PTZ_SET_CRUISE_ALLDATA、PTZ_SET_PRESET_CRUISE、PTZ_DEL_PRESET_CRUISE、PTZ_CLEAR_CRUISE、PTZ_CLEAR_ALL_CRUISE，详细见Remarks备注</dd>
+
+<dt><i>nCruiseID</i></dt>
+<dd>[in] 巡航路径的索引号，取值范围：[1,16]</dd>
+
+<dt><i>pConfig</i></dt>
+<dd>[in] 见Remarks</dd>
+</dl>
+
+<h4>Remarks</h4>
+<table>
+<tr valign=top>
+<th align=left><b>nSetCruiseCmd</b></th>
+<th align=left>含义</th>
+<th align=left>pConfig结构体</th>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_SET_CRUISE_ALLDATA</b></td>
+<td>设置所有预设巡航路径，此时nCruiseID入参无意义，巡航路径索引号在pConfig中设置</td>
+<td><a href="../结构体/NET_DEV_PTZ_CRUISE_PARAM.html">NET_DEV_PTZ_CRUISE_PARAM</a></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_SET_PRESET_CRUISE</b></td>
+<td>向一个巡航路径添加一个预置点，预置点的索引号取值范围为：[1,255]</td>
+<td><a href="../结构体/NET_DEV_PRESET_CRUISE_POINT.html">NET_DEV_PRESET_CRUISE_POINT</a></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_DEL_PRESET_CRUISE</b></td>
+<td>删除一个巡航路径的一个预置点，预置点的索引号取值范围为：[1,255]</td>
+<td><a href="../结构体/NET_DEV_PRESET_CRUISE_POINT.html">NET_DEV_PRESET_CRUISE_POINT</a></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CLEAR_CRUISE</b></td>
+<td></td>
+<td>NULL</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CLEAR_ALL_CRUISE</b></td>
+<td></td>
+<td>NULL</td>
+</tr>
+<!--
+<tr valign=top>
+<td><b>PTZ_FILL_PRE_SEQ</b></td>
+<td>无</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_SET_SEQ_DWELL</b></td>
+<td>无</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_SET_SEQ_SPEED</b></td>
+<td>无</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CLE_PRE_SEQ</b></td>
+<td>无</td>
+</tr>
+-->
+</table>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+

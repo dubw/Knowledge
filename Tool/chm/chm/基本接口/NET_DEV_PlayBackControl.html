@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_PlayBackControl</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_PlayBackControl</h1>
+<p>录像回放控制。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_PlayBackControl(</b>
+<b>    OS_INT32</b><i>       lPlayHandle,</i><b></b>
+<b>    OS_UINT32 </b><i>     dwControlCode,</i><b></b>
+<b>    OS_VOIDPTR </b><i>    lpInBuffer,</i><b></b>
+<b>    OS_UINT32 </b><i>     dwInLen,</i><b></b>
+<b>    OS_VOIDPTR </b><i>    lpOutBuffer,</i><b></b>
+<b>    OS_UINT32</b><i>      lpOutLen</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lPlayHandle</i></dt>
+<dd>[in] 录像回放句柄，NET_DEV_PlayBack接口的返回值</dd>
+
+<dt><i>dwControlCode</i></dt>
+<dd>[in] 控制录像回放的状态命令， 见下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>宏定义</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYSTART</b></td>
+<td>1</td>
+<td>开始播放，NET_DEV_PlayBack后需调用此命令才可开始传输码流</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYPAUSE</b></td>
+<td>2</td>
+<td>暂停播放</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYFAST</b></td>
+<td>3</td>
+<td>快速播放，每次调用后以之前速度的2倍播放，最快为16倍正常速度</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYSLOW</b></td>
+<td>4</td>
+<td>慢速播放，每次调用后以之前速度的1/2倍播放，最慢为1/16倍正常速度</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYNORMAL</b></td>
+<td>5</td>
+<td>（暂停，快放，慢放后）恢复正常速度播放</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYSETTIME</b></td>
+<td>6</td>
+<td>设置播放的时间，注意设置的时间只能在开始播放时设置的时间段内，在lpInBuffer传入NET_DEV_TIME结构指针以指定需要定位到的时间</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYGETTIME</b></td>
+<td>7</td>
+<td>获取当前码流绝对时间戳，向lpOutBuffer传入NET_DEV_TIME结构指针以获取时间</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAY_RESUME</b></td>
+<td>8</td>
+<td>恢复播放</td>
+</tr>
+
+
+<tr valign=top>
+<td><s><b>NET_DEV_PLAYFRAME</b></s></td>
+<td><s>10</s></td>
+<td><s>按帧播放</s></td>
+</tr>
+
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYSTARTAUDIO</b></td>
+<td>11</td>
+<td>打开声音</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_PLAYSTOPAUDIO</b></td>
+<td>12</td>
+<td>关闭声音</td>
+</tr>
+
+<tr valign=top>
+<td><b><s>NET_DEV_PLAYAUDIOVOLUME</s></b></td>
+<td><s>13</s></td>
+<td><s>调节音量</s></td>
+</tr>
+
+<tr valign=top>
+<td><b><s>NET_DEV_THROWBFRAME</s></b></td>
+<td><s>14</s></td>
+<td><s>抛弃B帧</s></td>
+</tr>
+</table>
+
+<dt><i>lpInBuffer</i></dt>
+<dd>[in] 传入数据内容</dd>
+
+<dt><i>dwInLen</i></dt>
+<dd>[in] 传入数据长度</dd>
+
+<dt><i>lpOutBuffer</i></dt>
+<dd>[in] 传出数据内容</dd>
+
+<dt><i>lpOutLen</i></dt>
+<dd>[in] 传出数据长度</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+<h4>See Also</h4>
+<p>
+<b><a href="NET_DEV_PlayBack.html">NET_DEV_StartRealPlay</a></b>
+<b><a href="NET_DEV_StopPlayBack.html">NET_DEV_StopPlayBack</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+

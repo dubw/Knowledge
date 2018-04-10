@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ADVANCE_IMAGING</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ADVANCE_IMAGING</h1>
+<p>设备高级成像配置。</p>                            
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>               byMeteringMode;</i><b></b>
+<b>    OS_UINT8</b><i>               byBackLightCompFlag;</i><b></b>
+<b>    OS_UINT8</b><i>               bySupportDcIris;</i><b></b>
+<b>    OS_UINT8</b><i>               byDcIrisFlag;</i><b></b>
+<b>    OS_UINT16</b><i>              wLocalExposure;</i><b></b>
+<b>    OS_UINT16</b><i>              wMctfStrength;</i><b></b>
+<b>    OS_UINT16</b><i>              wAeTargetRatio;</i><b></b>
+<b>    OS_UINT16</b><i>              wDcIrisDuty;</i><b></b>
+<b>    OS_UINT8</b><i>               byRes[2];</i><b></b>
+<b>    OS_INT32</b><i>               iDcIrisFonx1000;</i><b></b>
+<b>    OS_INT32</b><i>               iDcIrisMask;</i><b></b>
+<b>    OS_UINT8</b><i>               byReserved[400];</i><b></b>
+<b>} NET_DEV_ADVANCE_IMAGING;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byMeteringMode</i></dt>
+<dd>测光模式，0-点测光模式 1-中心测光模式 2-平均测光模式 3-常规测光模式</dd>
+
+<dt><i>byBackLightCompFlag</i></dt>
+<dd>背光补偿，0-不启用 1-启用</dd>
+
+<dt><i>bySupportDcIris</i></dt>
+<dd>是否支持自动光圈，0-不支持 1-支持</dd>
+
+<dt><i>byDcIrisFlag</i></dt>
+<dd>是否使能自动光圈，0-不使能 1-使能</dd>
+
+<dt><i>wLocalExposure</i></dt>
+<dd>宽动态，取值范围：[0,5]，0-不使能 1-自动 [2,5]-局部曝光越来越强</dd>
+
+<dt><i>wMctfStrength</i></dt>
+<dd>3D降噪，0-不使能 ；其他值，单位大小为32，取值范围：[0,255]</dd>
+
+<dt><i>wAeTargetRatio</i></dt>
+<dd>目标曝光系数，取值范围：[25,400]，单位:百分比</dd>
+
+<dt><i>wDcIrisDuty</i></dt>
+<dd>自动光圈，取值范围：[100,999]</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+<dt><i>iDcIrisFonx1000</i></dt>
+<dd>手动模式下光圈的大小，取值范围：[0,1000000]</dd>
+
+<dt><i>iDcIrisMask</i></dt>
+<dd>自动光圈的工作模式，每位表示的意义：0x4-全开 0x2-自动 0x1-手动</dd>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

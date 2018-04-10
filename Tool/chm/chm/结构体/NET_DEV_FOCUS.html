@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_FOCUS</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_FOCUS</h1>
+<p>设备语音对讲配置。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_INT32</b><i>               iFocusMode;</i><b></b>
+<b>    OS_INT32</b><i>               iFocusDisLimit;</i><b></b>
+<b>    OS_UINT8</b><i>               byReserved[200];</i><b></b>
+<b>} NET_DEV_FOCUS;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>iFocusMode</i></dt>
+<dd>自动聚焦模式，具体如下</dd>
+<table>
+<tr valign=top>
+<th align=left><b>模式</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>FOCUS_MODE_MANUAL</b></td>
+<td>0</td>
+<td>手动聚焦模式</td>
+</tr>
+
+<tr valign=top>
+<td><b>FOCUS_MODE_AUTO</b></td>
+<td>1</td>
+<td>自动聚焦模式</td>
+</tr>
+
+<tr valign=top>
+<td><b>FOCUS_MODE_ONCE_AUTO</b></td>
+<td>2</td>
+<td>聚焦锁定模式</td>
+</tr>
+</table>
+
+<dt><i>iFocusDisLimit</i></dt>
+<dd>最小聚焦限制，取值范围为{1000,1500,3000,5000,6000}，单位为毫米</dd>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

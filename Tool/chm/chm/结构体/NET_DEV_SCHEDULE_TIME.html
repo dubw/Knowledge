@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SCHEDULE_TIME</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SCHEDULE_TIME</h1>
+<p>设备录像时间段配置。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>               byStartHour;</i><b></b>
+<b>    OS_UINT8</b><i>               byStartMin;</i><b></b>
+<b>    OS_UINT8</b><i>               byStartSecond;</i><b></b>
+<b>    OS_UINT8</b><i>               byStopHour;</i><b></b>
+<b>    OS_UINT8</b><i>               byStopMin;</i><b></b>
+<b>    OS_UINT8</b><i>               byStopSecond;</i><b></b>
+<b>    OS_UINT8</b><i>               byRes[2];</i><b></b>
+<b>} NET_DEV_SCHEDULE_TIME;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byStartHour</i></dt>
+<dd>录像开始时间，小时</dd>
+
+<dt><i>byStartMin</i></dt>
+<dd>录像开始时间，分钟</dd>
+
+<dt><i>byStartMin</i></dt>
+<dd>录像开始时间，秒</dd>
+
+<dt><i>byStopHour</i></dt>
+<dd>录像结束时间，小时</dd>
+
+<dt><i>byStopMin</i></dt>
+<dd>录像结束时间，分钟</dd>
+
+<dt><i>byStopSecond</i></dt>
+<dd>录像结束时间，秒</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

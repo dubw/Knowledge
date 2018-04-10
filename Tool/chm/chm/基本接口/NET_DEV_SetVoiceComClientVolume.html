@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SetVoiceComClientVolume</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SetVoiceComClientVolume</h1>
+<p>设置语音对讲音量。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_SetVoiceComClientVolume(</b>
+<b>    OS_INT32</b><i>         lVoiceComHandle,</i><b></b>
+<b>    OS_INT16</b><i>         wVolume</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lVoiceComHandle</i></dt>
+<dd>[in] 语音对讲句柄，NET_DEV_StartVoiceCom接口的返回值</dd>
+
+<dt><i>wVolume</i></dt>
+<dd>[in] 音量大小，0-最小 0xFFFF-最大</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+
+<h4>See Also</h4>
+<p>
+<b><a href="NET_DEV_StartVoiceCom.html">NET_DEV_StartVoiceCom</a></b>
+<b><a href="NET_DEV_StopVoiceCom.html">NET_DEV_StopVoiceCom</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,332 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_PTZ_PARA</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_PTZ_PARA</h1>
+<p>设备云台配置参数。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_INT32</b><i>            iPTZCommand;</i><b></b>
+<b>    OS_INT32</b><i>            iPTZControl;</i><b></b>
+<b>    OS_INT32</b><i>            iHSpeed;</i><b></b>
+<b>    OS_INT32</b><i>            iVSpeed;</i><b></b>
+<b>    OS_INT32</b><i>            iPathId;</i><b></b>
+<b>    OS_UINT8</b><i>            byRes[116];</i><b></b>
+<b>} NET_DEV_PTZ_PARA;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>iPTZCommand</i></dt>
+<dd>云台控制命令，见Remarks</dd>
+
+<dt><i>iPTZControl</i></dt>
+<dd>云台控制参数，部分参数会用作别的用处，0-开始 1-停止</dd>
+
+<dt><i>iHSpeed</i></dt>
+<dd>相机旋转水平速度，取值范围：[0,100]</dd>
+
+<dt><i>iVSpeed</i></dt>
+<dd>相机旋转垂直速度，取值范围：[0,100]</dd>
+
+<dt><i>iPathId</i></dt>
+<dd>通道号，用作巡航路径或模式路径的ID值。巡航路径ID的取值范围：[1,16]，模式路径ID的取值范围：[1,4]</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>Remarks</h4>
+<p>
+<b>云台控制命令</b>
+<table>
+<tr valign=top>
+<th align=left><b>宏定义</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>云台转动方向</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_GOTO_HOME</b></td>
+<td>29</td>
+<td>转动到机械云台起始位置</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_UP</b></td>
+<td>25</td>
+<td>向上转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_DOWN</b></td>
+<td>26</td>
+<td>向下转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_LEFT</b></td>
+<td>27</td>
+<td>向左转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_RIGHT</b></td>
+<td>28</td>
+<td>向右转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_RIGHTUP</b></td>
+<td>56</td>
+<td>向右上转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_LEFTUP</b></td>
+<td>57</td>
+<td>向左上转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_RIGHTDOWN</b></td>
+<td>58</td>
+<td>向右下转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_LEFTDOWN</b></td>
+<td>59</td>
+<td>向左下转动</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_AUTOPAN</b></td>
+<td>49</td>
+<td>自动水平旋转（不适用于IPC）</td>
+</tr>
+
+<tr valign=top>
+<td><b>巡航</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CRUISE_START</b></td>
+<td>60</td>
+<td>云台巡航控制开始</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CRUISE_STOP</b></td>
+<td>61</td>
+<td>云台巡航控制停止</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_SET_CRUISE_ALLDATA</b></td>
+<td>62</td>
+<td>设置所有预设巡航路径</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_SET_PRESET_CRUISE</b></td>
+<td>63</td>
+<td>设置预设巡航点</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_DEL_PRESET_CRUISE</b></td>
+<td>64</td>
+<td>删除预设巡航点</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CLEAR_CRUISE</b></td>
+<td>65</td>
+<td>清除单个巡航路径</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_CLEAR_ALL_CRUISE</b></td>
+<td>65</td>
+<td>清除所有巡航路径</td>
+</tr>
+
+<tr valign=top>
+<td><STRIKE><b>PTZ_FILL_PRE_SEQ(废弃)</b></STRIKE></td>
+<td>67</td>
+<td>将预置点加入巡航序列</td>
+</tr>
+
+<tr valign=top>
+<td><STRIKE><b>PTZ_SET_SEQ_DWELL(废弃)</b></STRIKE></td>
+<td>68</td>
+<td>设置巡航点停顿时间</td>
+</tr>
+
+<tr valign=top>
+<td><STRIKE><b>PTZ_SET_SEQ_SPEED(废弃)</b></STRIKE></td>
+<td>69</td>
+<td>设置巡航速度</td>
+</tr>
+
+<tr valign=top>
+<td><STRIKE><b>PTZ_CLE_PRE_SEQ(废弃)</b></STRIKE></td>
+<td>70</td>
+<td>将预置点从巡航序列中删除</td>
+</tr>
+
+<tr valign=top>
+<td><b>镜头</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_FOCUS_NEAR</b></td>
+<td>21</td>
+<td>缩小焦距</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_FOCUS_FAR</b></td>
+<td>22</td>
+<td>放大焦距</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_ZOOM_WIDE</b></td>
+<td>23</td>
+<td>缩小倍数，放大视角</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_ZOOM_TELE</b></td>
+<td>24</td>
+<td>放大倍数，缩小视角</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_IRIS_AUTO</b></td>
+<td>62</td>
+<td>自动光圈（不适用于IPC）</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_IRIS_OPEN</b></td>
+<td>53</td>
+<td>放大光圈</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_IRIS_CLOSE</b></td>
+<td>54</td>
+<td>缩小光圈</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_FOCUS_AUTO</b></td>
+<td>63</td>
+<td>自动聚焦（不适用于IPC）</td>
+</tr>
+
+<tr valign=top>
+<td><b>3D控制</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_GOTO_ABS_POSITION</b></td>
+<td>51</td>
+<td>运动到指定的绝对坐标位置</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_GET_ABS_POSITION</b></td>
+<td>52</td>
+<td>获取云台当前的绝对坐标</td>
+</tr>
+
+<tr valign=top>
+<td><b>护罩控制</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_AUXIOPEN</b></td>
+<td>47</td>
+<td>护罩功能开，借用iPTZControl设置不同功能，1-雨刷 2-加热 4-风扇 5-护罩灯。若想关闭，请调用PTZ_AUXICLOSE</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_AUXICLOSE</b></td>
+<td>48</td>
+<td>护罩功能关，借用iPTZControl设置不同功能，1-雨刷 2-加热 4-风扇 5-护罩灯</td>
+</tr>
+
+<tr valign=top>
+<td><b>模式路径</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_START_PATTERN</b></td>
+<td>80</td>
+<td>启动运行模式路径</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_STOP_PATTERN</b></td>
+<td>81</td>
+<td>停止运行模式路径</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_START_RECORD_PATTERN</b></td>
+<td>82</td>
+<td>启动记录模式路径</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_STOP_RECORD_PATTERN</b></td>
+<td>83</td>
+<td>停止记录模式路径</td>
+</tr>
+
+<tr valign=top>
+<td><b>PTZ_DEL_PATTERN</b></td>
+<td>84</td>
+<td>删除模式路径</td>
+</tr>
+
+</table>
+
+</p>
+<p>最多支持的巡航点个数为 PTZ_MAX_PRESET_CRUISE_POINTS</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+

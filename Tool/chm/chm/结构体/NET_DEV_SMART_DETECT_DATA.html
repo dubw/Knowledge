@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SMART_DETECT_DATA</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SMART_DETECT_DATA</h1>
+<p>设备智能检测配置。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>                       bySmartAreaNum;</i><b></b>
+<b>    OS_UINT8</b><i>                       bySmartPointPerArea;</i><b></b>
+<b>    OS_UINT16</b><i>                      wSmartRefWidth;</i><b></b>
+<b>    OS_UINT16</b><i>                      wSmartRefHeight;</i><b></b>
+<b>    OS_UINT8</b><i>                       bySmartRefRotate;</i><b></b>
+<b>    OS_UINT8</b><i>                       bySmartColor;</i><b></b>
+<b>    <a href="NET_DEV_SMART_PARAM_AREA.html">NET_DEV_SMART_PARAM_AREA</a></b><i>       stSmartParamArea[MAX_SMART_AREA];</i><b></b>
+<b>    OS_UINT32</b><i>                      byReserved[20];</i><b></b>
+<b>} NET_DEV_SMART_DETECT_DATA;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>bySmartAreaNum</i></dt>
+<dd>区域个数</dd>
+
+<dt><i>bySmartPointPerArea</i></dt>
+<dd>每块区域多少个点</dd>
+
+<dt><i>wSmartRefWidth</i></dt>
+<dd>关联宽度</dd>
+
+<dt><i>wSmartRefHeight</i></dt>
+<dd>关联高度</dd>
+
+<dt><i>bySmartRefRotate</i></dt>
+<dd>旋转</dd>
+
+<dt><i>bySmartColor</i></dt>
+<dd>颜色</dd>
+
+<dt><i>stSmartParamArea</i></dt>
+<dd>区域配置参数</dd>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

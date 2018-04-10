@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_FIND_FILE_PARA</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_FIND_FILE_PARA</h1>
+<p>查找文件参数。</p>                                                           
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT16</b><i>          wSearchCommand;</i><b></b>
+<b>    OS_UINT16</b><i>          wFileType;</i><b></b>
+<b>    OS_UINT32</b><i>          dwChannel;</i><b></b>
+<b>    <a href="NET_DEV_TIME.html">NET_DEV_TIME</a></b><i>       struStartTime;</i><b></b>
+<b>    <a href="NET_DEV_TIME.html">NET_DEV_TIME</a></b><i>       struStopTime;</i><b></b>
+<b>    OS_UINT8</b><i>           byRes[636];</i><b></b>
+<b>} NET_DEV_FIND_FILE_PARA;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>wSearchCommand</i></dt>
+<dd>查找命令，具体参数如下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>枚举名</b></th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>SEARCH_RECORD_FILE</b></td>
+<td>查找文件</td>
+</tr>
+
+<tr valign=top>
+<td><b>SEARCH_PICTURE</b></td>
+<td>查找图片</td>
+</tr>
+</table>
+
+<dt><i>wFileType</i></dt>
+<dd>文件类型，0xffff-全部类型</dd>
+
+<dt><i>dwChannel</i></dt>
+<dd>通道号，从1开始</dd>
+
+<dt><i>struStartTime</i></dt>
+<dd>搜索时间段，起始时间</dd>
+
+<dt><i>struStopTime</i></dt>
+<dd>搜索时间段，结束时间</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+

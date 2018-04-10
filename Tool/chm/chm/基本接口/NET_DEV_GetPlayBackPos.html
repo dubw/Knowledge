@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_GetPlayBackPos</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_GetPlayBackPos</h1>
+<p>获取录像回放位置。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_GetPlayBackPos(</b>
+<b>    OS_INT32</b><i>       lPlayHandle,</i><b></b>
+<b>    OS_UINT32</b><i>    * pPosition</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lPlayHandle</i></dt>
+<dd>[in] 录像回放句柄，NET_DEV_PlayBack接口的返回值</dd>
+
+<dt><i>pPosition</i></dt>
+<dd>[in] 得到的播放进度位置，见下表</dd>
+<table>
+<tr valign=top>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td>0</td>
+<td>正在播放</td>
+</tr>
+
+<tr valign=top>
+<td>100</td>
+<td>回放完成</td>
+</tr>
+
+<tr valign=top>
+<td>>=200</td>
+<td>回放过程中出现异常</td>
+</tr>
+</table>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+<h4>See Also</h4>
+<p>
+<b><a href="NET_DEV_PlayBack.html">NET_DEV_StartRealPlay</a></b>
+<b><a href="NET_DEV_StopPlayBack.html">NET_DEV_StopPlayBack</a></b>
+<b><a href="NET_DEV_PlayBackControl.html">NET_DEV_PlayBackControl</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+

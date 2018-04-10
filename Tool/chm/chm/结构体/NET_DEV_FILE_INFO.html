@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_FILE_INFO</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_FILE_INFO</h1>
+<p>文件信息。</p>
+
+<PRE class=syntax><b>OS_INT32 NET_DEV_FILE_INFO(</b>
+<b>    <a href="NET_DEV_TIME.html">NET_DEV_TIME</a></b><i>     struStartTime,</i><b></b>
+<b>    <a href="NET_DEV_TIME.html">NET_DEV_TIME</a></b><i>     struStopTime,</i><b></b>
+<b>    OS_UINT32</b><i>        dwFileSize,</i><b></b>
+<b>    OS_UINT16</b><i>        wFileType,</i><b></b>
+<b>    OS_UINT8</b><i>         byRes1[338]</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>struStartTime</i></dt>
+<dd>[out] 文件的起始时间</dd>
+
+<dt><i>struStopTime</i></dt>
+<dd>[out] 文件的结束时间</dd>
+
+<dt><i>dwFileSize</i></dt>
+<dd>[out] 文件大小</dd>
+
+<dt><i>wFileType</i></dt>
+<dd>[out] 文件类型</dd>
+
+<dt><i>struStopTime</i></dt>
+<dd>[out] 保留位，置为0</dd>
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+

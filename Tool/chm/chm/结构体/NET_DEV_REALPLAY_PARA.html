@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_REALPLAY_PARA</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_REALPLAY_PARA</h1>
+<p>实时预览参数。</p>                                 
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_INT32</b><i>                nChannel;</i><b></b>
+<b>    OS_INT32</b><i>                nLinkMode;</i><b></b>
+<b>    OS_INT32</b><i>                nStreamID;</i><b></b>
+<b>    OS_BOOL</b><i>                 bBlocked;</i><b></b>
+<b>    HWND</b><i>                    hPlayWnd;</i><b></b>
+<b>    OS_UINT16</b><i>               wTimeout;</i><b></b>
+<b>    OS_INT32</b><i>                byReserved[398];</i><b></b>
+<b>} NET_DEV_REALPLAY_PARA;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>nChannel</i></dt>
+<dd>通道号，从1开始</dd>
+
+<dt><i>nLinkMode</i></dt>
+<dd>连接模式，0-RTP over RTSP 1-RTP over UDP 2-Private Stream</dd>
+
+<dt><i>nStreamID</i></dt>
+<dd>码流号，1-码流1 2-码流2 3-码流3 4-码流4</dd>
+
+<dt><i>bBlocked</i></dt>
+<dd>0-非阻塞取流，1-阻塞取流</dd>
+<dd>非阻塞取流，表示与发起与设备连接就算成功</dd>
+<dd>阻塞取流，表示播放成功才会返回</dd>
+
+<dt><i>hPlayWnd</i></dt>
+<dd>播放窗口的句柄，为NULL表示不解码显示。</dd>
+
+<dt><i>wTimeout</i></dt>
+<dd>暂时保留，置为0</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_StartRealPlay.html">NET_DEV_StartRealPlay</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

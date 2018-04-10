@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ALARM_LINK_INFO</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ALARM_LINK_INFO</h1>
+<p>设备关联方式配置。</p>                                                                  
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>               dwAlarmOut;</i><b></b>
+<b>    OS_UINT32</b><i>               dwSupportChannel;</i><b></b>
+<b>    <a href="NET_DEV_LINK_PTZ.html">NET_DEV_LINK_PTZ</a></b><i>        strLinkPtz[NET_MAX_CHAN];</i><b></b>
+<b>    OS_UINT16</b><i>               wWhiteLightDelay;</i><b></b>
+<b>    OS_UINT16</b><i>               wCapPicInterval;</i><b></b>
+<b>    OS_UINT16</b><i>               wReserved[600];</i><b></b>
+<b>} NET_DEV_ALARM_LINK_INFO;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwAlarmOut</i></dt>
+<dd>报警输出，bit0-报警输出端口0 bit1-报警输出端口1 bit2-报警输出端口2 bit3-报警输出端口3。这几个bit位取值，0-不开启 1-开启</dd>
+
+<dt><i>dwSupportChannel</i></dt>
+<dd>支持PTZ联动的通道号，只读</dd>
+
+<dt><i>strLinkPtz</i></dt>
+<dd>PTZ联动方式配置</dd>
+
+<dt><i>wWhiteLightDelay</i></dt>
+<dd>灯光输出持续时间，单位：秒</dd>
+
+<dt><i>wCapPicInterval</i></dt>
+<dd>抓图间隔时间，单位：秒</dd>
+
+<dt><i>wReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

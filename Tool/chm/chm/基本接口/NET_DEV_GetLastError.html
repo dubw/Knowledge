@@ -1,0 +1,619 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_GetLastError</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_GetLastError</h1>
+<p>获取最后操作的错误码。</p>
+
+<PRE class=syntax><b>OS_INT32 NET_DEV_GetLastError(</b>
+<b>    OS_VOID</b> 
+<b>);</b></PRE>
+
+<h4>Return Values</h4>
+<p>错误码，通过错误码判断出错原因。如下表</p>
+
+<table>
+<tr valign=top>
+<th align=left><b>错误类型</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>通用错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_ERROR</b></td>
+<td>0</td>
+<td>没有错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_VERSION_MISMATCH</b></td>
+<td>1</td>
+<td>版本不匹配</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_CHAN_NOT_SUPPORT</b></td>
+<td>2</td>
+<td>指定通道不支持该操作</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_UNKNOW_ENCRYPT</b></td>
+<td>3</td>
+<td>未知的加密方式</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_SDK_INTER_ERROR</b></td>
+<td>4</td>
+<td>SDK内部错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_ALLOC_RESOURCE_ERROR</b></td>
+<td>5</td>
+<td>资源分配错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NOT_SUPPORT</b></td>
+<td>6</td>
+<td>SDK不支持该操作</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_INIT</b></td>
+<td>7</td>
+<td>没有初始化</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_PARAM_ERROR</b></td>
+<td>8</td>
+<td>参数错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_INPUT_TIME_ERROR</b></td>
+<td>9</td>
+<td>时间输入不正确</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_INVALID_HANDLE</b></td>
+<td>10</td>
+<td>无效的句柄</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_ORDER_ERROR</b></td>
+<td>11</td>
+<td>接口调用次序错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_OS_NO_SUPPORT</b></td>
+<td>12</td>
+<td>当前系统不支持此功能</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_UNSUPPORT_CONFIG</b></td>
+<td>13</td>
+<td>不支持的配置命令</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_SERVER_DATA_ERROR</b></td>
+<td>14</td>
+<td>服务端传输的数据有误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_TIME_PARA_ERROR</b></td>
+<td>15</td>
+<td>时间参数错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_BUFFER_SIZE_ERROR</b></td>
+<td>16</td>
+<td>输入的buffer大小有误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_ID_ERROR</b></td>
+<td>17</td>
+<td>ID错误, 如网卡ID, 硬盘ID</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_PLAY_END</b></td>
+<td>18</td>
+<td>回放录像文件已结束</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_MAX_SESSION</b></td>
+<td>19</td>
+<td>session分配达到最大数目</td>
+</tr>
+
+<tr valign=top>
+<td><b>网络错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_BIND_SOCKET_ERROR</b></td>
+<td>40</td>
+<td>绑定套接字失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_CLOSE_SOCKET_ERROR</b></td>
+<td>41</td>
+<td>socket连接中断，此错误通常是由于连接中断或目的地不可达</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_LISTEN_ERROR</b></td>
+<td>42</td>
+<td>socket监听失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_CONNECT_FAIL</b></td>
+<td>43</td>
+<td>连接服务器失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_SEND_FAIL</b></td>
+<td>44</td>
+<td>向服务器发送失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RECV_FAIL</b></td>
+<td>45</td>
+<td>从服务器接收数据失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RECV_TIMEOUT</b></td>
+<td>46</td>
+<td>从服务器接收数据超时</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_ENOUGH_SENDBUF</b></td>
+<td>47</td>
+<td>发送缓冲区太小</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_ENOUGH_RECVBUF</b></td>
+<td>48</td>
+<td>接收缓冲区太小</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_CREATE_SOCKET_ERROR</b></td>
+<td>49</td>
+<td>创建SOCKET出错</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_SET_SOCKET_ERROR</b></td>
+<td>50</td>
+<td>设置SOCKET参数出错</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_LOCAL_PORT_IN_USE</b></td>
+<td>51</td>
+<td>本地端口已被占用</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_FILE_END</b></td>
+<td>52</td>
+<td>文件结束</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RECONNECTING</b></td>
+<td>53</td>
+<td>正在重连</td>
+</tr>
+
+<tr valign=top>
+<td><b>文件错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_CREATE_FILE_FAIL</b></td>
+<td>60</td>
+<td>创建文件出错</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_OPEN_FILE_FAIL</b></td>
+<td>61</td>
+<td>打开文件出错</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_WRITE_FILE_FAIL</b></td>
+<td>62</td>
+<td>写文件失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_UNKNOW_FORMAT</b></td>
+<td>63</td>
+<td>文件格式不正确</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_DIR_ERROR</b></td>
+<td>64</td>
+<td>路径错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_READ_FILE_FAIL</b></td>
+<td>65</td>
+<td>读文件失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>系统环境相关</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_PC_OPEN_SOUND_FAIL</b></td>
+<td>80</td>
+<td>打开PC声音失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_AUDIO_MODE_ERROR</b></td>
+<td>81</td>
+<td>声卡模式错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_VOICEMONOPOLIZE</b></td>
+<td>82</td>
+<td>声卡被独占</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_LOAD_PLAYSDK_API_FAIL</b></td>
+<td>83</td>
+<td>调用播放库某个接口失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_LOAD_PLAYSDK_FAIL</b></td>
+<td>84</td>
+<td>加载播放SDK失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_PLAYER_FAIL</b></td>
+<td>85</td>
+<td>播放库调用错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_GET_LOCAL_IP_FAIL</b></td>
+<td>86</td>
+<td>获得客户端的IP地址或物理地址失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_GET_LOCAL_MAC_FAIL</b></td>
+<td>87</td>
+<td>获得客户端的IP地址或物理地址失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_IP_MISMATCH</b></td>
+<td>88</td>
+<td>IP地址不匹配</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_MAC_MISMATCH</b></td>
+<td>89</td>
+<td>MAC地址不匹配</td>
+</tr>
+
+<tr valign=top>
+<td><b>推模式相关错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_IPC_REGISTER</b></td>
+<td>101</td>
+<td>没有IPC主动建立的链接</td>
+</tr>
+
+<tr valign=top>
+<td><b>设备端反馈的错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_OPERATION_ERROR</b></td>
+<td>500</td>
+<td>设备返回调用失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_USER_NOT_EXIST</b></td>
+<td>501</td>
+<td>用户不存在</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_PASSWORD_ERROR</b></td>
+<td>502</td>
+<td>用户名密码错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_INVALID_SESSION_ID</b></td>
+<td>503</td>
+<td>无效的会话ID</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_MAX_USER_NUM</b></td>
+<td>504</td>
+<td>设备端用户数达到最大</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NOSERIALPORT</b></td>
+<td>505</td>
+<td>串口号错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_ALARMIN_ID_ERROR</b></td>
+<td>506</td>
+<td>无效的报警输入号</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_ALARMOUT_ID_ERROR</b></td>
+<td>507</td>
+<td>无效的报警输出号</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_CHANNEL_ID_ERROR</b></td>
+<td>508</td>
+<td>通道号错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NET_ERROR_DATA</b></td>
+<td>509</td>
+<td>设备反应传送的数据有误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_VOICE_IN_USE</b></td>
+<td>510</td>
+<td>服务器语音对讲被占用</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_DISK</b></td>
+<td>511</td>
+<td>没有硬盘</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_DISK_ID_ERROR</b></td>
+<td>512</td>
+<td>硬盘号错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_NO_RIGHT</b></td>
+<td>513</td>
+<td>设备端反应权限不足</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_DISK_IS_FORMATING</b></td>
+<td>514</td>
+<td>硬盘正在格式化硬盘</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_UNKONW_DEVICE_ERROR</b></td>
+<td>515</td>
+<td>设备返回的未知错误码</td>
+</tr>
+
+<tr valign=top>
+<td><b>RTSP错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_LOAD_RTSP_SDK_ERROR</b></td>
+<td>1000</td>
+<td>加载RTSP SDK 失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_INVALID_PARAM</b></td>
+<td>1001</td>
+<td>参数错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_NOT_SUPPORT</b></td>
+<td>1002</td>
+<td>不支持的方法</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_NO_MEMORY</b></td>
+<td>1003</td>
+<td>内存不足</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_TIMEDOUT</b></td>
+<td>1004</td>
+<td>访问超时</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_AGAIN</b></td>
+<td>1005</td>
+<td>请重试</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_UNIMPLEMENTED</b></td>
+<td>1006</td>
+<td>未实现</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_WRONG_STATUS</b></td>
+<td>1007</td>
+<td>错误的状态</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_PROTOCOL</b></td>
+<td>1008</td>
+<td>不支持的协议</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_NOTFOUND</b></td>
+<td>1009</td>
+<td>录像文件没有找到</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_AUTHFAILED</b></td>
+<td>1010</td>
+<td>认证失败</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_ERROR_RTSP_FAULT</b></td>
+<td>1255</td>
+<td>通用错误</td>
+</tr>
+
+<tr valign=top>
+<td><b>异常回调错误</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_HEARTBEAT_FAIL</b></td>
+<td>0x0001</td>
+<td>用户交互时异常</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_HEARTBEAT_RESUME</b></td>
+<td>0x0002</td>
+<td>用户交互恢复</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_VOICE_TALK</b></td>
+<td>0x0003</td>
+<td>语音对讲异常</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_ALARMCHAN_FAIL</b></td>
+<td>0x0004</td>
+<td>报警异常</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_REALPLAY_FAIL</b></td>
+<td>0x0005</td>
+<td>预览异常</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_REALPLAY_RECONNECT</b></td>
+<td>0x0006</td>
+<td>预览时重连</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_ALARMCHAN_RECONNECT</b></td>
+<td>0x0007</td>
+<td>报警时重连</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_PLAYBACK_FAIL</b></td>
+<td>0x0008</td>
+<td>回放异常</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_REALPLAY_RESUME</b></td>
+<td>0x0009</td>
+<td>预览时重连成功</td>
+</tr>
+
+<tr valign=top>
+<td><b>EXCP_ALARMCHAN_RESUME</b></td>
+<td>0x0010</td>
+<td>报警时重连成功</td>
+</tr>
+
+
+
+
+</table>
+
+<br/>
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ALARM_CENTER</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ALARM_CENTER</h1>
+<p>设备报警中心配置。</p>                                                            
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>               dwSupportAlarmCenterNum;</i><b></b>
+<b>    <a href="NET_DEV_CENTER_INFO.html">NET_DEV_CENTER_INFO</a></b><i>     struCenterInfo[NET_MAX_ALARM_CENTER];</i><b></b>
+<b>    OS_UINT8</b><i>                byReserved[400];</i><b></b>
+<b>} NET_DEV_ALARM_CENTER;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwSupportAlarmCenterNum</i></dt>
+<dd>支持的最大报警中心数量，只读</dd>
+
+<dt><i>struCenterInfo</i></dt>
+<dd>报警中心信息</dd>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

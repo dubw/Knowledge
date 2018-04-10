@@ -1,0 +1,362 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SetDevConfig</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SetDevConfig</h1>
+<p>设置设备配置信息。</p>
+
+<PRE class=syntax><b>OS_BOOL NET_DEV_SetDevConfig(</b>
+<b>    OS_INT32</b><i>        lUserID,</i><b>,</b>
+<b>    OS_UINT32</b><i>       dwCommand,</i><b></b>
+<b>    OS_INT32</b><i>        lINdex,</i><b></b>
+<b>    OS_VOIDPTR</b><i>      lpInBuffer,</i><b></b>
+<b>    OS_UINT32</b><i>       dwInBufferSize,</i><b></b>
+<b>    OS_UINT32</b><i>       dwTimeOut = 0</i><b></b>
+<b>);</b></PRE>
+
+<h4>Parameters</h4>
+<dl>
+<dt><i>lUserID</i></dt>
+<dd>[in] 用户ID，NET_DEV_Login的返回值</dd>
+
+<dt><i>dwCommand</i></dt>
+<dd>[in] 获取设备配置信息的命令参数，具体参数见下表</dd>
+
+<dt><i>lIndex</i></dt>
+<dd>[in] 序列号</dd>
+
+<dt><i>lpInBuffer</i></dt>
+<dd>[in] 待设置的设备参数信息</dd>
+
+<dt><i>dwInBufferSize</i></dt>
+<dd>[in] 待设置的设备参数结构体大小</dd>
+
+<dt><i>dwTimeOut</i></dt>
+<dd>[in] 接收超时时间,单位:毫秒。默认值为0</dd>
+</dl>
+
+<h4>Return Values</h4>
+<p>成功返回TRUE，失败返回FALSE。接口返回失败请调用<b><a href="../基本接口/NET_DEV_GetLastError.html">NET_DEV_GetLastError</a></b>获取错误码，通过错误码判断出错原因。</p>
+
+<h4>Remarks</h4>
+<p>对于不同的命令参数（dwCommand），lpInBuffer和lINdex对应不同的含义，具体如下表所示：</p>
+<table>
+<tr valign=top>
+<th align=left><b>dwCommand</b></th>
+<th align=left>值</th>
+<th align=left>含义</th>
+<th align=left>lpInBuffer对应结构体</th>
+<th align=left>lINdex</th>
+<th align=left>适用产品</th>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_DEVICE_INFO</b></td>
+<td>0x0002</td>
+<td>设备基本配置</td>
+<td><b><a href="../结构体/NET_DEV_DEVICE_INFO.html">NET_DEV_DEVICE_INFO</a></b></td>
+<td>无意义</td>
+<td>NVR，IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_IP_CHAN_INFO</b></td>
+<td>0x0004</td>
+<td>设备单个通道视频源配置</td>
+<td><b><a href="../结构体/NET_DEV_IP_CHAN_GROUP_INFO.html">NET_DEV_IP_CHAN_GROUP_INFO</a></b></td>
+<td>通道号，从1开始</td>
+<td>NVR</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_NET_ADAPTER</b></td>
+<td>0x0008</td>
+<td>设备网络适配器信息,网卡ID号</td>
+<td><b><a href="../结构体/NET_DEV_NET_ADAPTER.html">NET_DEV_NET_ADAPTER</a></b></td>
+<td>NVR-从1开始，IPC-1</td>
+<td>NVR，IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_SYNC_TIME</b></td>
+<td>0x0010</td>
+<td>设备系统时间配置</td>
+<td><b><a href="../结构体/NET_DEV_SYNC_TIME.html">NET_DEV_SYNC_TIME</a></b></td>
+<td>NVR-从1开始，IPC-无意义</td>
+<td>NVR，IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_RECORD_SCHEDULE</b></td>
+<td>0x0012</td>
+<td>设备录像计划时间配置</td>
+<td><b><a href="../结构体/NET_DEV_RECORD_SCHEDULE.html">NET_DEV_RECORD_SCHEDULE</a></b></td>
+<td>通道号，从1开始</td>
+<td>NVR</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_NET_PORT</b></td>
+<td>0x0014</td>
+<td>设备网络端口配置</td>
+<td><b><a href="../结构体/NET_DEV_NET_PORT.html">NET_DEV_NET_PORT</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_DAY_NIGHT</b></td>
+<td>0x0016</td>
+<td>设备日夜模式配置</td>
+<td><b><a href="../结构体/NET_DEV_DAY_NIGHT.html">NET_DEV_DAY_NIGHT</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ADVANCE_IMAGING</b></td>
+<td>0x0018</td>
+<td>高级图像配置</td>
+<td><b><a href="../结构体/NET_DEV_ADVANCE_IMAGING.html">NET_DEV_ADVANCE_IMAGING</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_SHOW_CFG</b></td>
+<td>0x001a</td>
+<td>设备显示配置</td>
+<td><b><a href="../结构体/NET_DEV_SHOW_CFG.html">NET_DEV_SHOW_CFG</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_AUDIO_TALK</b></td>
+<td>0x0021</td>
+<td>设备语音对讲配置</td>
+<td><b><a href="../结构体/NET_DEV_AUDIO_TALK_PARA.html">NET_DEV_AUDIO_TALK_PARA</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_AUTO_FOCUS</b></td>
+<td>0x0023</td>
+<td>设备自动聚焦配置</td>
+<td><b><a href="../结构体/NET_DEV_FOCUS.html">NET_DEV_FOCUS</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARM_CENTER</b></td>
+<td>0x0025</td>
+<td>设备报警中心配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_CENTER.html">NET_DEV_ALARM_CENTER</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_PTZ_DECODE</b></td>
+<td>0x0027</td>
+<td>设备云台解码配置</td>
+<td><b><a href="../结构体/NET_DEV_PTZ_DECODER.html">NET_DEV_PTZ_DECODER</a></b></td>
+<td>无意义</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARMIN_CFG</b></td>
+<td>0x0029</td>
+<td>设备告警输入配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARMIN_CFG.html">NET_DEV_ALARMIN_CFG</a></b></td>
+<td>0</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_MOTION_DETECT</b></td>
+<td>0x002b</td>
+<td>设备移动侦测配置</td>
+<td><b><a href="../结构体/NET_DEV_MOTION_DETECT.html">NET_DEV_MOTION_DETECT</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_PIR_DETECT</b></td>
+<td>0x002d</td>
+<td>设备被动红外侦测配置</td>
+<td><b><a href="../结构体/NET_DEV_PIR_DETECT.html">NET_DEV_PIR_DETECT</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_VIDEO_LOST_DETECT</b></td>
+<td>0x0030</td>
+<td>设备视频丢失配置</td>
+<td><b><a href="../结构体/NET_DEV_VIDEO_LOST_DETECT.html">NET_DEV_VIDEO_LOST_DETECT</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_AUDIO_DETECT</b></td>
+<td>0x0032</td>
+<td>设备声音检测配置</td>
+<td><b><a href="../结构体/NET_DEV_AUDIO_DETECT.html">NET_DEV_AUDIO_DETECT</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARMIN_SCHEDULE</b></td>
+<td>0x0036</td>
+<td>设备报警输入布防时间配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_SCHEDULE.html">NET_DEV_ALARM_SCHEDULE</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARMOUT_SCHEDULE</b></td>
+<td>0x0038</td>
+<td>设备报警输出布防时间配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_SCHEDULE.html">NET_DEV_ALARM_SCHEDULE</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_PIR_DETECT_SCHEDULE</b></td>
+<td>0x003a</td>
+<td>设备被动红外布防时间配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_SCHEDULE.html">NET_DEV_ALARM_SCHEDULE</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ABNORMAL_DETECT_SCHEDULE</b></td>
+<td>0x003c</td>
+<td>设备视频异常布防时间配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_SCHEDULE.html">NET_DEV_ALARM_SCHEDULE</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_MOTION_DETECT_SCHEDULE</b></td>
+<td>0x003e</td>
+<td>设备移动侦测布防时间配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_SCHEDULE.html">NET_DEV_ALARM_SCHEDULE</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARMOUT_CFG</b></td>
+<td>0x0041</td>
+<td>设备报警输出配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARMOUT_CFG.html">NET_DEV_ALARMOUT_CFG</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_HIDE_CFG</b></td>
+<td>0x0043</td>
+<td>设备隐私遮挡配置</td>
+<td><b><a href="../结构体/NET_DEV_HIDE_CFG.html">NET_DEV_HIDE_CFG</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_AUDIO_DETECT_SCHEDULE</b></td>
+<td>0x0045</td>
+<td>设备音频侦测布防时间配置</td>
+<td><b><a href="../结构体/NET_DEV_ALARM_SCHEDULE.html">NET_DEV_ALARM_SCHEDULE</a></b></td>
+<td>1</td>
+<td>IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARM_LINE_DECTECT</b></td>
+<td>0x0047</td>
+<td>设备越界侦测配置</td>
+<td><b><a href="../结构体/NET_DEV_SMART_DETECT.html">NET_DEV_SMART_DETECT</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARM_FIELD_DECTECT</b></td>
+<td>0x0049</td>
+<td>设备区域入侵配置</td>
+<td><b><a href="../结构体/NET_DEV_SMART_DETECT.html">NET_DEV_SMART_DETECT</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARM_OBJECT_LEFT</b></td>
+<td>0x004b</td>
+<td>设备物品遗留配置</td>
+<td><b><a href="../结构体/NET_DEV_SMART_DETECT.html">NET_DEV_SMART_DETECT</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARM_TEMP</b></td>
+<td>0x004d</td>
+<td>设备温度信息</td>
+<td><b><a href="../结构体/NET_DEV_ENV_DETECT.html">NET_DEV_ENV_DETECT</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+<tr valign=top>
+<td><b>NET_DEV_SET_ALARM_HUMIDITY</b></td>
+<td>0x0050</td>
+<td>设备湿度信息</td>
+<td><b><a href="../结构体/NET_DEV_ENV_DETECT.html">NET_DEV_ENV_DETECT</a></b></td>
+<td>1</td>
+<td>不支持IPC</td>
+</tr>
+
+</table>
+
+<h4>See Also</h4>
+<p><b><a href="NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b></p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

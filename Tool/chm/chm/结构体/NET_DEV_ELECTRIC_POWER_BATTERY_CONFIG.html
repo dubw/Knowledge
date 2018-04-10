@@ -1,0 +1,140 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG</h1>
+<p>电池配置（输电线路防外破项目）。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>      byBatteryType;</i><b></b>
+<b>    OS_UINT8</b><i>      byChargeWay;</i><b></b>
+<b>    OS_UINT16</b><i>     wBatteryVolume;</i><b></b>
+<b>    OS_INT16</b><i>      wTemperatureCompensateCoefficient;</i><b></b>
+<b>    OS_UINT16</b><i>     wOverrunBreakVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wOverrunBreakRecoveryVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wBalancedChargeVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wLiftingChargeVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wFloatingChargeVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wLiftingRecoveryVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wBatteryChangePercent;</i><b></b>
+<b>    OS_UINT8</b><i>      byRatedVoltageLevel;</i><b></b>
+<b>    OS_UINT8</b><i>      byReserve1;</i><b></b>
+<b>    OS_UINT16</b><i>     wLiftingSustainedTime;</i><b></b>
+<b>    OS_UINT16</b><i>     wBalancedSustainedTime;</i><b></b>
+<b>    OS_UINT16</b><i>     wChangeLimitVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wDischangeLimitVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wLowVoltageBreakVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wLowVoltageBreakRecoveryVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wUnderrunAlarmVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wUnderrunAlarmRecoveryVoltage;</i><b></b>
+<b>    OS_UINT16</b><i>     wBatteryDischangePercent;</i><b></b>
+<b>    OS_UINT8</b><i>      byReserve2[NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG_RESERVE_LENGTH];</i><b></b>
+<b>} NET_DEV_ELECTRIC_POWER_BATTERY_CONFIG;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byBatteryType</i></dt>
+<dd>蓄电池类型</dd>
+
+<dt><i>byChargeWay</i></dt>
+<dd>充电方式</dd>
+
+<dt><i>wBatteryVolume</i></dt>
+<dd>电池总容量</dd>
+
+<dt><i>wTemperatureCompensateCoefficient</i></dt>
+<dd>温度补偿系数(mV/℃/2V)</dd>
+
+<dt><i>wOverrunBreakVoltage</i></dt>
+<dd>超压断开电压</dd>
+
+<dt><i>wOverrunBreakRecoveryVoltage</i></dt>
+<dd>超压断开恢复电压</dd>
+
+<dt><i>wBalancedChargeVoltage</i></dt>
+<dd>均衡充电电压</dd>
+
+<dt><i>wLiftingChargeVoltage</i></dt>
+<dd>提升充电电压</dd>
+
+<dt><i>wFloatingChargeVoltage</i></dt>
+<dd>浮充充电电压</dd>
+
+<dt><i>wLiftingRecoveryVoltage</i></dt>
+<dd>提升恢复电压</dd>
+
+<dt><i>wBatteryChangePercent</i></dt>
+<dd>蓄电池充电，单位：百分比</dd>
+
+<dt><i>byRatedVoltageLevel</i></dt>
+<dd>额定电压等级</dd>
+
+<dt><i>wLiftingSustainedTime</i></dt>
+<dd>提升持续时间</dd>
+
+<dt><i>wBalancedSustainedTime</i></dt>
+<dd>均衡持续时间</dd>
+
+<dt><i>wChangeLimitVoltage</i></dt>
+<dd>充电限制电压</dd>
+
+<dt><i>wDischangeLimitVoltage</i></dt>
+<dd>放电限制电压</dd>
+
+<dt><i>wLowVoltageBreakVoltage</i></dt>
+<dd>低压断开电压</dd>
+
+<dt><i>wLowVoltageBreakRecoveryVoltage</i></dt>
+<dd>低压断开恢复电压</dd>
+
+<dt><i>wUnderrunAlarmVoltage</i></dt>
+<dd>欠压告警电压</dd>
+
+<dt><i>wUnderrunAlarmRecoveryVoltage</i></dt>
+<dd>欠压告警恢复电压</dd>
+
+<dt><i>wBatteryDischangePercent</i></dt>
+<dd>蓄电池放电，单位：百分比</dd>
+
+<dt><i>byReserve2</i></dt>
+<dd>保留位，置为0</dd>
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../产品接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../产品接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,251 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ENCODE_STREAM_COMBINE</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ENCODE_STREAM_COMBINE</h1>
+<p>码流组合信息。</p>                                                           
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>          dwEnableStreamNum;</i><b></b>
+<b>    OS_UINT32</b><i>          dwStreamCombineNo;</i><b></b>
+<b>    OS_UINT8</b><i>           byReserved[400];</i><b></b>
+<b>} NET_DEV_ENCODE_STREAM_COMBINE;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>dwEnableStreamNum</i></dt>
+<dd>码流有效通道数，取值范围：[1,NET_MAX_STREAM]</dd>
+
+<dt><i>dwStreamCombineNo</i></dt>
+<dd>码流组合序号，见下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>码流组合值</b></th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>码流有效通道数为1</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>0</b></td>
+<td>1080P25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>1</b></td>
+<td>1080P30fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>2</b></td>
+<td>720P60fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>3</b></td>
+<td>720P30fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>4</b></td>
+<td>720P25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>5</b></td>
+<td>1024P25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>6</b></td>
+<td>960P25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>码流有效通道数为2</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>0</b></td>
+<td>1080P25fps_576P25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>1</b></td>
+<td>1080P25fps_4CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>2</b></td>
+<td>1080P30fps_480P30fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>3</b></td>
+<td>1080P30fps_480P15fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>4</b></td>
+<td>1080P25fps_CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>5</b></td>
+<td>720P25fps_576P25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>6</b></td>
+<td>720P25fps_4CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>7</b></td>
+<td>720P30fps_480P30fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>8</b></td>
+<td>720P60fps_CIF30fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>9</b></td>
+<td>720P25fps_CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>10</b></td>
+<td>1080P25fps_576P10fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>11</b></td>
+<td>1080P25fps_CIF10fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>12</b></td>
+<td>1080P25fps_720P10fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>13</b></td>
+<td>1024P25fps_4CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>14</b></td>
+<td>960P25fps_576P25fps</td>
+
+<tr valign=top>
+<td><b>15</b></td>
+<td>960P25fps_4CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>码流有效通道数为3</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>0</b></td>
+<td>1080P20fps_720P20fps_480P20fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>1</b></td>
+<td>1080P20fps_720P20fps_CIF20fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>2</b></td>
+<td>1080P25fps_576P25fps_CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>3</b></td>
+<td>1080P25fps_4CIF25fps_CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>4</b></td>
+<td>1080P25fps_576P25fps_576P10fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>5</b></td>
+<td>1080P25fps_576P25fps_CIF10fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>6</b></td>
+<td>1024P25fps_480P25fps_CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>7</b></td>
+<td>960P25fps_480P25fps_CIF25fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>码流有效通道数为4</b></td>
+</tr>
+
+<tr valign=top>
+<td><b>0</b></td>
+<td>1080P20fps_720P20fps_576P20fps_CIF20fps</td>
+</tr>
+
+<tr valign=top>
+<td><b>1</b></td>
+<td>1080P25fps_CIF25fps_CIF25fps_CIF25fps</td>
+
+<tr valign=top>
+<td><b>2</b></td>
+<td>1024P25fps_CIF25fps_CIF25fps_CIF25fps</td>
+
+<tr valign=top>
+<td><b>3</b></td>
+<td>960P20fps_720P20fps_576P20fps_480P20fps</td>
+
+</tr>
+
+
+</table>
+
+<dt><i>byReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+

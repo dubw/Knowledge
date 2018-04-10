@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>实时预览流程</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>实时预览流程</h1>
+<p align="center"><br><img align="middle" src="../流程图/实时预览流程.png"><br><br></p>
+<p>
+<ul>
+<li>
+码流组合和编码设置：在登录设备后，开启实时预览前，可以设置码流组合（包含码流数和组合类型）和编码配置（视频压缩格式、I帧间隔、码率控制等），来获取想要的视频流。
+</li>
+<li>
+启动预览（<a href="../基本接口/NET_DEV_StartRealPlay.html"><b>NET_DEV_StartRealPlay</b></a>）：打开视频流，如果参数中的窗口为NULL，则不会显示视频画面。<br>
+</li>
+<li>
+当视频开启后，可以对其进行设置，包括：强制I帧、声音控制、抓图、录像、云台控制（不开启视频也可以控制）、实时流回调处理。<br>
+</li>
+<li>
+停止预览（<a href="../基本接口/NET_DEV_StopRealPlay.html"><b>NET_DEV_StopRealPlay</b></a>）：关闭视频流。<br>
+</li>
+</ul>
+<br>
+</p>
+
+<hr color="#999999"><br>
+
+
+</body>
+
+</html>
+
+

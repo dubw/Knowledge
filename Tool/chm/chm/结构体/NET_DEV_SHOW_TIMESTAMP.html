@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SHOW_TIMESTAMP</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SHOW_TIMESTAMP</h1>
+<p>设备显示OSD时间戳信息。</p>                                                                                             
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT32</b><i>               iEnable;</i><b></b>
+<b>    OS_UINT32</b><i>               iLanguage;</i><b></b>
+<b>    OS_UINT32</b><i>               iDisplayX;</i><b></b>
+<b>    OS_UINT32</b><i>               iDisplayY;</i><b></b>
+<b>    OS_UINT32</b><i>               iDateStyle;</i><b></b>
+<b>    OS_UINT32</b><i>               iTimeStyle;</i><b></b>
+<b>    OS_UINT32</b><i>               iFontColor;</i><b></b>
+<b>    OS_UINT32</b><i>               iFontSize;</i><b></b>
+<b>    OS_UINT32</b><i>               iFontBlod;</i><b></b>
+<b>    OS_UINT32</b><i>               iFontRotate;</i><b></b>
+<b>    OS_UINT32</b><i>               iFontItalic;</i><b></b>
+<b>    OS_UINT32</b><i>               iFontOutline;</i><b></b>
+<b>    OS_UINT8</b><i>                byRes[60];</i><b></b>
+<b>} NET_DEV_SHOW_TIMESTAMP;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>iEnable</i></dt>
+<dd>时间戳显示是否使能，0-不使能 1-使能</dd>
+
+<dt><i>iLanguage</i></dt>
+<dd>语言，1-英语 2-中文 3-韩文</dd>
+
+<dt><i>iDisplayX</i></dt>
+<dd>显示位置X坐标，取值范围0~100</dd>
+
+<dt><i>iDisplayY</i></dt>
+<dd>显示位置Y坐标，取值范围0~100</dd>
+
+<dt><i>iDateStyle</i></dt>
+<dd>日期显示风格，0-年-月-日,1-月-日-年</dd>
+
+<dt><i>iTimeStyle</i></dt>
+<dd>时间显示风格，0-时：分：秒</dd>
+
+<dt><i>iFontColor</i></dt>
+<dd>字体颜色，0-黑色, 1-红色, 2-蓝色,3-绿色,4-黄色,5-品红,6-青色,7-白色,8-自动(自适应，根据背景选择白色还是黑色）</dd>
+
+<dt><i>iFontSize</i></dt>
+<dd>字体大小，取值范围 [8,16,24,32]中的一个</dd>
+
+<dt><i>iFontBlod</i></dt>
+<dd>字体加粗，0-不加粗 1-加粗</dd>
+
+<dt><i>iFontRotate</i></dt>
+<dd>字体旋转，0-不旋转 1-旋转</dd>
+
+<dt><i>iFontItalic</i></dt>
+<dd>字体倾斜，0-不倾斜 1-倾斜</dd>
+
+<dt><i>iFontOutline</i></dt>
+<dd>字体边框，0-没有边框 1-有边框</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_ALARMER</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_ALARMER</h1>
+<p>报警设备信息。</p>                                                            
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    <a href="NET_DEV_IP_ADDR.html">NET_DEV_IP_ADDR</a></b><i>  strIpAddr;</i><b></b>
+<b>    OS_UINT8</b><i>         byRes[200];</i><b></b>
+<b>} NET_DEV_ALARMER;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>strIpAddr</i></dt>
+<dd>设备IP地址</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../基本接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../基本接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+

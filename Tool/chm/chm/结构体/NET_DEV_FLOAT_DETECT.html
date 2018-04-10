@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_FLOAT_DETECT</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_FLOAT_DETECT</h1>
+<p>漂浮物配置（输电线路防外破项目）。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>                 byEnable;</i><b></b>
+<b>    OS_UINT8</b><i>                 byFloatThreshold;</i><b></b>
+<b>    OS_UINT8</b><i>                 byRes[2];</i><b></b>
+<b>    <a href="NET_DEV_DETECT_POLYGON.html">NET_DEV_DETECT_POLYGON</a></b><i>   polygon;</i><b></b>
+<b>    OS_UINT32</b><i>                nMinArea;</i><b></b>
+<b>    OS_UINT32</b><i>                nFloatWindowLen;</i><b></b>
+<b>} NET_DEV_FLOAT_DETECT;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byEnable</i></dt>
+<dd>是否使能检测，2-不使能 1-使能</dd>
+
+<dt><i>byFloatThreshold</i></dt>
+<dd>存在漂浮物的比例占多大判定为存在漂浮物, 取值范围：[1,100]</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+<dt><i>polygon</i></dt>
+<dd>检测多边形坐标</dd>
+
+<dt><i>nMinArea</i></dt>
+<dd>面积小于该区域不作判断</dd>
+
+<dt><i>nFloatWindowLen</i></dt>
+<dd>漂浮物判定的时间窗口长度</dd>
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../产品接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../产品接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+

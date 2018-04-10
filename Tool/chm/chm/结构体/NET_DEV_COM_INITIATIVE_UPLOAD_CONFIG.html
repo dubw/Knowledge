@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_COM_INITIATIVE_UPLOAD_CONFIG</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_COM_INITIATIVE_UPLOAD_CONFIG</h1>
+<p>串口主动上传配置。</p>
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_BOOL</b><i>            bUpload2ServerEnable;</i><b></b>
+<b>    OS_UINT32</b><i>          dwMaxWaitTime;</i><b></b>
+<b>    OS_UINT32</b><i>          dwMinSendLen;</i><b></b>
+<b>    OS_BOOL</b><i>            bDetachPelco;</i><b></b>
+<b>    OS_INT32</b><i>           iReserved[8];
+<b>} NET_DEV_COM_INITIATIVE_UPLOAD_CONFIG;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>bUpload2ServerEnable</i></dt>
+<dd>主动上传使能，TRUE：主动上传，FALSE：被动模式，需要使用NET_DEV_ReadCOM获取串口数据</dd>
+
+<dt><i>dwMaxWaitTime</i></dt>
+<dd>最大上传等待时间，单位毫秒，0代表只要有数据立即主动上传</dd>
+
+<dt><i>dwMinSendLen</i></dt>
+<dd>最小发送数据长度，小于这个长度IPC会缓冲起来，直到数据长度大于等于dwMinSendLen</dd>
+
+<dt><i>bDetachPelco</i></dt>
+<dd>是否不使用Pelco协议，默认FALSE</dd>
+
+<dt><i>iReserved</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_VEHICLE_SERVER</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_VEHICLE_SERVER</h1>
+<p>服务器地址等信息（输电线路防外破项目）。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>                 byEnable;</i><b></b>
+<b>    OS_UINT16</b><i>                wPort;</i><b></b>
+<b>    OS_UINT8</b><i>                 byHeartbeatInterval;</i><b></b>
+<b>    char</b><i>                     sDeviceId[NET_DEV_DEVICE_ID_LENGTH];</i><b></b>
+<b>    OS_UINT8</b><i>                  byRes[15];</i><b></b>
+<b>    char</b><i>                      sIP[16];</i><b></b>
+<b>} NET_DEV_VEHICLE_SERVER;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byEnable</i></dt>
+<dd>是否使能检测，0-不使能 1-使能</dd>
+
+<dt><i>wPort</i></dt>
+<dd>服务器端口号</dd>
+
+<dt><i>byHeartbeatInterval</i></dt>
+<dd>心跳间隔</dd>
+
+<dt><i>sDeviceId</i></dt>
+<dd>设备ID</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+<dt><i>sIP</i></dt>
+<dd>服务器IP地址</dd>
+</dl>
+
+<h4>See Also</h4>
+<p>
+<b><a href="../产品接口/NET_DEV_GetDevConfig.html">NET_DEV_GetDevConfig</a></b>
+<b><a href="../产品接口/NET_DEV_SetDevConfig.html">NET_DEV_SetDevConfig</a></b>
+</p>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+

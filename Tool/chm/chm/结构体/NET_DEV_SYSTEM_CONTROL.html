@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_SYSTEM_CONTROL</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_SYSTEM_CONTROL</h1>
+<p>系统控制参数。</p>                                                           
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    <a href="#">SYSTEM_CONTROL</a></b><i>          eControlCode;</i><b></b>
+<b>    OS_UINT8</b><i>                byRes[200];</i><b></b>
+<b>} NET_DEV_SYSTEM_CONTROL;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>eControlCode</i></dt>
+<dd>控制码，具体参数如下表</dd>
+<table>
+<tr valign=top>
+<th align=left><b>枚举名</b></th>
+<th align=left>含义</th>
+</tr>
+
+<tr valign=top>
+<td><b>REBOOT_DEVICE</b></td>
+<td>重启设备</td>
+</tr>
+
+<tr valign=top>
+<td><b>CAMERALINKAGE_CALIBRATION</b></td>
+<td>相机连接校准（枪球联动定制功能）</td>
+</tr>
+</table>
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+</dl>
+
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+

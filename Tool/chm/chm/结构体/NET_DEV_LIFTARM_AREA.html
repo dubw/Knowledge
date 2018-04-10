@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>NET_DEV_LIFTARM_AREA</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body topmargin="0">
+
+<table class="buttonbarshade" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<table class="buttonbartable" cellspacing="0">
+	<tr id="hdr">
+		<td class="runninghead" nowrap>杰迈视讯SDK开发使用手册</td>
+	</tr>
+</table>
+
+<h1>NET_DEV_LIFTARM_AREA</h1>
+<p>扬臂配置（输电线路防外破项目）。</p>                                                               
+
+<PRE class=syntax><b>typedef struct {</b>
+<b>    OS_UINT8</b><i>                 byEnable;</i><b></b>
+<b>    OS_UINT8</b><i>                 byLiftArmRatio;</i><b></b>
+<b>    OS_UINT8</b><i>                 byRes[10];</i><b></b>
+<b>    <a href="NET_DEV_DETECT_POLYGON.html">NET_DEV_DETECT_POLYGON</a></b><i>   polygon;</i><b></b>
+<b>    OS_UINT16</b><i>                wMinWidth;</i><b></b>
+<b>    OS_UINT16</b><i>                wMaxWidth;</i><b></b>
+<b>    OS_UINT16</b><i>                wMinHeight;</i><b></b>
+<b>    OS_UINT16</b><i>                wMaxHeight;</i><b></b>
+<b>} NET_DEV_LIFTARM_AREA;</b></PRE>
+
+<h4>Members</h4>
+<dl>
+<dt><i>byEnable</i></dt>
+<dd>是否使能检测，2-不使能 1-使能</dd>
+
+<dt><i>byLiftArmRatio</i></dt>
+<dd>扬臂所占比例，不低于该值为有效, 取值范围：[1,100]</dd>
+
+<dt><i>byRes</i></dt>
+<dd>保留位，置为0</dd>
+
+<dt><i>polygon</i></dt>
+<dd>检测多边形坐标</dd>
+
+<dt><i>wMinWidth</i></dt>
+<dd>最小宽度，单位：像素</dd>
+
+<dt><i>wMaxWidth</i></dt>
+<dd>最大宽度，单位：像素</dd>
+
+<dt><i>wMinHeight</i></dt>
+<dd>最小高度，单位：像素</dd>
+
+<dt><i>wMaxHeight</i></dt>
+<dd>最大高度，单位：像素</dd>
+</dl>
+
+<hr color="#999999"><br>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
