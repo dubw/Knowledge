@@ -1,0 +1,9 @@
+Mon, 05 Mar 2018 15:05:13 modify_hk_cfg.py[line:71] INFO =====================
+Mon, 05 Mar 2018 15:05:13 modify_hk_cfg.py[line:72] INFO Start ...
+Mon, 05 Mar 2018 15:05:13 hk_sdk.py[line:27] INFO ip:192.168.50.100, port:8000, name:admin, passwd:admin123456
+Mon, 05 Mar 2018 15:05:14 hk_sdk.py[line:168] INFO userid: 0, channel: 1
+Mon, 05 Mar 2018 15:05:14 hk_sdk.py[line:185] INFO encode type[h264(0,1) or h265(10)]: 1
+Mon, 05 Mar 2018 15:05:14 hk_sdk.py[line:196] INFO No need to change encode.
+Mon, 05 Mar 2018 15:05:14 modify_hk_cfg.py[line:78] INFO End ...
+Mon, 05 Mar 2018 15:05:14 modify_hk_cfg.py[line:80] INFO =====================sleep:10
+root        : INFO     =====================sleep:10
